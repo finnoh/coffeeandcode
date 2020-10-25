@@ -32,23 +32,21 @@ title = "Hugo Serif Theme"
 
 [menu]
   # Main Menu
-  [[menu.main]]
-    name = "Services"
-    url = "/services/"
-      weight = 1
 
   [[menu.main]]
-      name = "Team"
-      url = "/team/"
-      weight = 2
+      name = "Articles"
+      url = "/services/"
+      weight = 1 
+  
+  [[menu.main]]
+      name = "About"
+      url = "/about/"
+      weight = 2  
+ 
 
   # Footer Menu
-  [[menu.footer]]
-    name = "Home"
-    url = "/"
-      weight = 1
 
   [[menu.footer]]
     name = "Contact"
     url = "/contact/"
-      weight = 2
+      weight = 1

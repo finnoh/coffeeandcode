@@ -1,8 +1,10 @@
 <div class="call">
-  <div class="call-box-top">
-    {{ if .site.Data.contact.phone }}
-        <div class="call-phone"><strong>Phone: </strong> {{ .site.Data.contact.phone }} </div>
-    {{ end }}
+  <div class="call-box-top"> <!--
+    {{ if .site.Data.contact.github }}
+        <div class="call-github"><strong>GitHub: </strong> <a href="https://github.com/finnoh">
+        GitHub
+      </a> </div>
+    {{ end }} -->
     {{ if .site.Data.contact.email }}
     <div class="call-email"><strong>Email: </strong>
       <a href="mailto:{{ .site.Data.contact.email }}">

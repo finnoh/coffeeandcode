@@ -1,10 +1,13 @@
 ---
-intro_image: images/illustrations/pointing.svg
+intro_image: images/illustrations/pixeltrue-teaching.svg
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 title: Home
 ---
 
-# Serif - A Hugo Business Theme.
+# Finn Hoener
 
-Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
+This is my personal data science blog. Welcome!
+Here is more text
+
+and more

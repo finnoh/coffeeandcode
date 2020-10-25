@@ -8,16 +8,6 @@
   </url>
   
   <url>
-    <loc>/services/accounting/</loc>
-    <lastmod>2018-11-18T12:33:46+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/business-advisory/</loc>
-    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/team/sage-kirk/</loc>
     <lastmod>2018-11-19T10:47:58+10:00</lastmod>
   </url>
@@ -33,18 +23,8 @@
   </url>
   
   <url>
-    <loc>/services/business-sales/</loc>
-    <lastmod>2018-11-28T15:15:26+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/team/tamara-ells/</loc>
     <lastmod>2018-12-20T13:44:55+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/mergers/</loc>
-    <lastmod>2018-11-28T15:15:34+10:00</lastmod>
   </url>
   
   <url>
@@ -53,33 +33,63 @@
   </url>
   
   <url>
-    <loc>/services/superannuation/</loc>
-    <lastmod>2018-11-28T15:14:54+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/tax-preperation/</loc>
-    <lastmod>2018-11-18T12:33:46+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/team/bill-mcdonald/</loc>
     <lastmod>2018-11-19T10:47:58+10:00</lastmod>
   </url>
   
   <url>
+    <loc>/services/recent-article/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/first/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial/first-guide/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial/first-r-code/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-12-20T13:45:06+10:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/test/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/team/</loc>
     <lastmod>2018-12-20T13:45:06+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/</loc>
-    <lastmod>2018-11-28T15:15:34+10:00</lastmod>
   </url>
   
   <url>
@@ -90,11 +100,6 @@
   <url>
     <loc>/contact/</loc>
     <lastmod>2018-02-22T17:01:34+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
@@ -124,11 +129,6 @@
   
   <url>
     <loc>/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   

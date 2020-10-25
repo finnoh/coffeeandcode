@@ -1,9 +1,15 @@
 ---
-date: "2018-11-28T15:15:34+10:00"
-draft: false
-featured: true
-title: Mergers
-weight: 4
+title: Recent Article
+author: Finn
+date: '2020-10-25'
+slug: recent-article
+categories: []
+tags: []
+intro_image: images/articles/nonsap-visuals-kMJp7620W6U-unsplash.jpg
+intro_image_absolute: no
+intro_image_hide_on_mobile: yes
+featured: yes
+weight: 100
 ---
 
 Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum
@@ -12,7 +18,7 @@ crimen habet Priamum nec.
 
 ## Ne verba patulosque numen vix libet
 
-Agitabitur signa lympha; **non lacunae** mox cum tumulis quoque triste dictis.
+Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis.
 Ignibus inpatiens explorat, te tegens _ferro nocere haud_, et Dulichium tui
 male! Quo sed [fuit flexit et](#vexant-achivi) hic die solido, gloria?
 
@@ -23,7 +29,7 @@ male! Quo sed [fuit flexit et](#vexant-achivi) hic die solido, gloria?
 5. Ardua non igne caelesti coniugis cognovi diversorum
 6. Per nunc pariterque saeva vindicet
 
-Locus evicit __loquuntur Tyrrhena omnes__, obstipui pugnabant temptavit Phoco _vati_
+Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco _vati_
 dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa!
 Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus
 esse iam feres mortis Plurima.

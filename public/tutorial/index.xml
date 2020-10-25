@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on My New Hugo Site</title>
+    <link>/tutorial/</link>
+    <description>Recent content in Tutorials on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First guide</title>
+      <link>/tutorial/first-guide/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial/first-guide/</guid>
+      <description>Start thisa is the guide</description>
+    </item>
+    
+    <item>
+      <title>First R Code</title>
+      <link>/tutorial/first-r-code/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial/first-r-code/</guid>
+      <description>Wowprint(2+2)## [1] 4Hello, there python
+a = [1,2,3]len(a)## 3</description>
+    </item>
+    
+  </channel>
+</rss>
