@@ -5,9 +5,6 @@ intro_image_hide_on_mobile: true
 title: Home
 ---
 
-# Finn Hoener
+# Coffee and Code
 
-This is my personal data science blog. Welcome!
-Here is more text
-
-and more
+This blog is about reading interesting stuff during your coffee break. 
