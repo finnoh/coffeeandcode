@@ -7,4 +7,4 @@ title: Home
 
 # Coffee and Code
 
-This blog is about reading interesting stuff during your coffee break. 
+Have a cup of coffee and enjoy a coding tutorial or an article about a Data Science project. 
