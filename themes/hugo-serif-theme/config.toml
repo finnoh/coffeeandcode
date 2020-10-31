@@ -7,14 +7,17 @@ title = "Coffe and Code"
   google_analytics_id = ""
   google_tag_manager_id = ""
 
+  customCSS = ["custom.css"]
+
+
   [params.homepage]
     show_call_box = true
 
   [params.logo]
     mobile = "images/logo/logo-mobile.svg"
     desktop = "images/logo/logo.svg"
-    desktop_height = "128px"
-    alt = "Serif - A Hugo Business Theme"
+    desktop_height = "140px"
+    alt = "Coffee and Code"
 
   [params.homepage_meta_tags]
     meta_description = "Serif is a modern business theme for Hugo. It contains content types for the archetypical business website. The theme is fully responsive, blazing fast and artfully illustrated."
@@ -28,7 +31,9 @@ title = "Coffe and Code"
     meta_twitter_creator = "@zerostaticio"
 
   [params.footer]
-    copyright_text = 'Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">www.zerostatic.io</a>'
+    copyright_text = 'Blog by <a class="zerostatic" href="https://github.com/finnoh">Finn Hoener - 2020</a>'
+  
+  
 
 [menu]
   # Main Menu
@@ -36,11 +41,17 @@ title = "Coffe and Code"
   [[menu.main]]
       name = "Articles"
       url = "/services/"
-      weight = 1 
-  
+      weight = 1
+      
+  [[menu.main]]
+      name = "Tutorials"
+      url = "/tutorials/"
+      weight = 2
+
+
   # Footer Menu
 
-  [[menu.footer]]
-    name = "Contact"
-    url = "/contact/"
-      weight = 2
+#  [[menu.footer]]
+#    name = "Contact"
+#    url = "/contact/"
+#    weight = 2

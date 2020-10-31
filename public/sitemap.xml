@@ -43,6 +43,21 @@
   </url>
   
   <url>
+    <loc>/404/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/404/whoops/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
@@ -53,17 +68,12 @@
   </url>
   
   <url>
-    <loc>/tutorial/first-guide/</loc>
+    <loc>/tutorials/first-guide/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorial/first-r-code/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
+    <loc>/tutorials/first-r-code/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,18 +88,28 @@
   </url>
   
   <url>
+    <loc>/tags/test/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/test/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorial/</loc>
+    <loc>/tutorials/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/team/</loc>
     <lastmod>2018-12-20T13:45:06+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contact/contact/</loc>
+    <lastmod>2018-02-22T17:01:34+07:00</lastmod>
   </url>
   
   <url>
@@ -128,7 +148,23 @@
   </url>
   
   <url>
-    <loc>/404/</loc>
+    <loc>/categories/one/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/python_rmd/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tag-a/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tag-b/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/two/</loc>
   </url>
   
 </urlset>

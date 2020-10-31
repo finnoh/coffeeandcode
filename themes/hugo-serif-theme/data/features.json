@@ -1,17 +1,17 @@
 [
   {
     "title": "Articles",
-    "description": "Great reading for your daily coffee break.",
+    "description": "Short reports and summaries on a variety of projects.",
     "image": "images/features/open-doodles-coffee.svg"
   },
   {
     "title": "Tutorials",
-    "description": "Great reading for your daily coffee break.",
+    "description": "Step by step guides on data science techniques and coding challenges.",
     "image": "images/features/gummy-macbook.svg"
   },
   {
-    "title": "Get in Touch",
-    "description": "Great reading for your daily coffee break.",
+    "title": "Contact",
+    "description": "Let's connect, share and exchange!",
     "image": "images/features/pixeltrue-icons-seo-growth-1.svg"
   }
 ]

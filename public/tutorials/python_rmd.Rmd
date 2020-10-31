@@ -1,0 +1,100 @@
+---
+title: "Python rmd"
+author: "Finn H"
+date: "31 10 2020"
+description: 'Aweseome description of the post'
+categories: ['one','two']
+tags: ['tag a', 'tag b']
+---
+
+<html>
+   <link rel="stylesheet" href="/css/custom.css" />  
+</html>
+
+
+
+
+
+```{python}
+import os
+import pandas as pd
+import nbconvert as nb
+```
+
+
+# First Header
+
+## Tab 1
+This is a markdown cell.
+
+```{python}
+a = [1,2,3]
+b = [5,4,3]
+
+df = pd.DataFrame(data={'First col':a, 'Second col':b})
+```
+
+
+## Tab 2
+more text
+
+```{python}
+df.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First col</th>
+      <th>Second col</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```{python}
+os.system('jupyter nbconvert --to html test.ipynb')
+```
+
+```{js, echo = FALSE}
+$(".colored > h1").wrapInner('<span style="color:#B6854D"></span>')
+```
+

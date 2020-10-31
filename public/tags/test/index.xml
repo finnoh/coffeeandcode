@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test on Share and connect.</title>
+    <link>/tags/test/</link>
+    <description>Recent content in test on Share and connect.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent Article</title>
+      <link>/services/recent-article/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/services/recent-article/</guid>
+      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
+ Cum det dixit Parcarum qui spemque est Exit ex huic Quod consiste agitataque claustraque vicina videt lacertis Loquor videt Ardua non igne caelesti coniugis cognovi diversorum Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus.</description>
+    </item>
+    
+  </channel>
+</rss>

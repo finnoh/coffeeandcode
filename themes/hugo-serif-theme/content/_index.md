@@ -8,3 +8,4 @@ title: Home
 # Coffee and Code
 
 Have a cup of coffee and enjoy a coding tutorial or an article about a Data Science project. 
+TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT

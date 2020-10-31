@@ -1,5 +1,5 @@
 theme = "hugo-serif-theme"
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Share and connect."
 # ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]

@@ -1,0 +1,28 @@
+---
+title: First R Code
+author: Finn
+date: '2020-10-25'
+slug: first-r-code
+categories: []
+tags: []
+---
+
+# Wow
+
+```{r}
+print(2+2)
+```
+
+
+Hello, there python
+
+```{python}
+
+a = [1,2,3]
+
+len(a)
+
+
+```
+
+More text

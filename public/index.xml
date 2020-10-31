@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on My New Hugo Site</title>
+    <title>Home on Share and connect.</title>
     <link>/</link>
-    <description>Recent content in Home on My New Hugo Site</description>
+    <description>Recent content in Home on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Peter Van Eijk</title>
       <link>/team/peter-van-eijk/</link>
@@ -84,30 +84,38 @@ Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cu
     </item>
     
     <item>
+      <title>Whoops</title>
+      <link>/404/whoops/</link>
+      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/404/whoops/</guid>
+      <description>404 </description>
+    </item>
+    
+    <item>
       <title>First guide</title>
-      <link>/tutorial/first-guide/</link>
+      <link>/tutorials/first-guide/</link>
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorial/first-guide/</guid>
+      <guid>/tutorials/first-guide/</guid>
       <description>Start thisa is the guide</description>
     </item>
     
     <item>
       <title>First R Code</title>
-      <link>/tutorial/first-r-code/</link>
+      <link>/tutorials/first-r-code/</link>
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorial/first-r-code/</guid>
-      <description>Wowprint(2+2)## [1] 4Hello, there python
-a = [1,2,3]len(a)## 3</description>
+      <guid>/tutorials/first-r-code/</guid>
+      <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/contact/</link>
+      <link>/contact/contact/</link>
       <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>/contact/contact/</guid>
       <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
 Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
  Cum det dixit Parcarum qui spemque est Exit ex huic Quod consiste agitataque claustraque vicina videt lacertis Loquor videt Ardua non igne caelesti coniugis cognovi diversorum Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus.</description>
@@ -122,6 +130,15 @@ Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cu
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Python rmd</title>
+      <link>/tutorials/python_rmd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/python_rmd/</guid>
+      <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
     </item>
     
   </channel>

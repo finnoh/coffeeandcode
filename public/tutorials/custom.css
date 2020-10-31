@@ -1,0 +1,19 @@
+#TOC {
+  position: fixed;
+  right: 30px;
+  width: 440px;
+  max-width:100%;
+  overflow:auto;
+}
+
+
+/* Numbering suffix in TOC */
+.toc-section-number:after{
+    content: ". "
+}
+
+/* Numbering suffix in Body/Content */
+.header-section-number:after{
+    content: ". "
+}
+

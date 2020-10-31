@@ -3,8 +3,8 @@ title: Recent Article
 author: Finn
 date: '2020-10-25'
 slug: recent-article
-categories: []
-tags: []
+categories: [test]
+tags: [test]
 intro_image: images/articles/nonsap-visuals-kMJp7620W6U-unsplash.jpg
 intro_image_absolute: no
 intro_image_hide_on_mobile: yes

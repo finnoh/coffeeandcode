@@ -1,0 +1,6 @@
+output: 
+  blogdown::html_page:
+    highlight: pygments
+    toc: false
+    number_sections: false
+    css: "custom.css"
