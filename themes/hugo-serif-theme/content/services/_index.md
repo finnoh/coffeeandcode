@@ -2,7 +2,7 @@
 intro_image: images/illustrations/open-doodles-coffee.svg
 intro_image_absolute: false
 intro_image_hide_on_mobile: false
-title: Services
+title: Articles
 ---
 
 # Daily reading for your coffee break

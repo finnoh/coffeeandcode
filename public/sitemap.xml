@@ -58,6 +58,11 @@
   </url>
   
   <url>
+    <loc>/services/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
@@ -74,11 +79,6 @@
   
   <url>
     <loc>/tutorials/first-r-code/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   

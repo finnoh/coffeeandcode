@@ -11,3 +11,19 @@
     }
   }
 }
+
+.service-summary {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  .service-image {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border-radius: 100%;
+    overflow: hidden;
+    img {
+      width: 60px;
+    }
+  }
+}

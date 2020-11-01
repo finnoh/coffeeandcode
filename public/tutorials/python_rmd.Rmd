@@ -5,6 +5,10 @@ date: "31 10 2020"
 description: 'Aweseome description of the post'
 categories: ['one','two']
 tags: ['tag a', 'tag b']
+image: "images/featured.jpg"
+
+code_lang: "Python"
+
 ---
 
 <html>
@@ -12,19 +16,59 @@ tags: ['tag a', 'tag b']
 </html>
 
 
+```{r xaringanExtra, echo=FALSE, include=TRUE}
+xaringanExtra::use_xaringan_extra(c("panelset"))
+xaringanExtra::style_panelset_tabs(font_family = "inherit") # for more options see GitHub https://github.com/gadenbuie/xaringanExtra
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+
+```
+
+
+```{r}
+#knitr::opts_chunk$set(collapse = TRUE, comment = "", tidy = TRUE)
+knitr::opts_template$set(r_code = list(collapse = TRUE, comment = "", tidy = TRUE, dev="svg"))
+knitr::opts_template$set(py_code = list(collapse = TRUE, comment = "", tidy = TRUE, prompt = FALSE, dev="svg"))
+
+```
 
 
 
-```{python}
+```{python, opts.label="py_code"}
 import os
 import pandas as pd
 import nbconvert as nb
 ```
 
+<div class="panelset">
 
-# First Header
+```{r panelset = TRUE, opts.label="r_code", fig.cap="My first figure", fig.align='center'}
+print('this is R code')
+print(41+1)
 
-## Tab 1
+# now a plot
+par(mar = c(4, 4, 0.1, 0.1))
+plot(cars)
+```
+
+
+
+
+Now we look at "the math" --- dash:
+
+$$ \frac{46}{23} $$
+
+
+# First Header {.panelset}
+
+## Tab 1 
 This is a markdown cell.
 
 ```{python}

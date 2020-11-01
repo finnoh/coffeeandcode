@@ -1,8 +1,11 @@
-<div class="service service-summary">
-  <div class="service-content">
-    <h2 class="service-title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-    <p>{{ .Description }}</p>
+<div class="card" style="width: 18rem;">
+  {{ if .Params.image }}
+  <div class="service-image">
+    <img alt="Photo of {{ .Title }}" class="img-fluid mb-2" src="{{ .Params.image | relURL }}" />
+  </div>
+  {{ end }}
+  <div class="card-body">
+    <h5 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+    <p class="card-text">{{ .Description }}</p>
   </div>
 </div>

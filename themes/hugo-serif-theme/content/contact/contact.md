@@ -4,7 +4,7 @@ layout: contact
 menu: main
 title: Contact
 intro_image_absolute: false
-my_image: images/illustrations/me_business.jpg
+my_image: /images/illustrations/me_business.JPG
 ---
 
 
