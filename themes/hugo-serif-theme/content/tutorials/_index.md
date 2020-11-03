@@ -7,5 +7,7 @@ title: Tutorials
 
 # WOW - How did you do that?
 
-Aliquam erat volutpat. Morbi nisl tortor, dignissim eget efficitur vel, auctor non felis. Fusce quis viverra mi. Aenean quis massa pretium, ullamcorper nisi eget, hendrerit odio.
-    
+Importing, cleaning, modelling and visualizing data, here you find hands-on guidance in R and Python. 
+Let's learn together!  
+
+Have you got ideas or wishes for a new guide? Submit them via: *GOOGLE DOCS LINK*. 

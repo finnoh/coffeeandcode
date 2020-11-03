@@ -1,5 +1,5 @@
 ---
-title: Recent Article
+title: First Article
 author: Finn
 date: '2020-10-25'
 slug: recent-article
@@ -10,6 +10,7 @@ intro_image_absolute: no
 intro_image_hide_on_mobile: yes
 featured: yes
 weight: 100
+description: "This is the first article of the blog."
 ---
 
 Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum

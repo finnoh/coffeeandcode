@@ -7,5 +7,5 @@ title: Home
 
 # Coffee and Code
 
-Have a cup of coffee and enjoy a coding tutorial or an article about a Data Science project. 
-TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
+Kick back and relax, while enjoying a cup of coffee. We provide the right reading material for you.
+Whether it is a coding tutorial or an article out of data science, we got you covered!

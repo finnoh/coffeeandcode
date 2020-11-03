@@ -7,5 +7,5 @@ title: Articles
 
 # Daily reading for your coffee break
 
-Aliquam erat volutpat. Morbi nisl tortor, dignissim eget efficitur vel, auctor non felis. Fusce quis viverra mi. Aenean quis massa pretium, ullamcorper nisi eget, hendrerit odio.
+This is the right place for exploring articles about data science or stories that are underpinned with statistics.
     
