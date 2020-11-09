@@ -10,4 +10,4 @@ title: Tutorials
 Importing, cleaning, modelling and visualizing data, here you find hands-on guidance in R and Python. 
 Let's learn together!  
 
-Have you got ideas or wishes for a new guide? Submit them via: *GOOGLE DOCS LINK*. 
+*Have you got ideas or wishes for a new guide? If you like, enter them into the form on the left.* 
