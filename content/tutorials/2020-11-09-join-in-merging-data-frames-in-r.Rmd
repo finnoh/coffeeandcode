@@ -1,0 +1,199 @@
+---
+title: Join in! Merging Data Frames in R
+author: Finn
+date: '2020-11-09'
+slug: join-in-merging-data-frames-in-r
+categories:
+  - R
+tags:
+  - tutorial
+  - data cleaning
+  - basic
+  - tidyverse
+intro_image: images/undraw_selection_92i4.svg
+intro_image_absolute: no
+intro_image_hide_on_mobile: yes
+featured: yes
+weight: 100
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(cache = TRUE, echo = TRUE, eval = TRUE, warning = FALSE, error = FALSE)
+library(kableExtra)
+
+my_kable <- function(df, caption, label){
+  
+  num_cols <- ncol(df)
+  str_align <- rep("c", num_cols) %>% paste(collapse = "")
+  
+  
+  df %>% kbl(align = str_align, caption = caption, label = label) %>%  kable_material(c("responsive","condensed","hover"))
+}
+
+```
+
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+
+```
+
+
+# Problem
+
+```{r input_data}
+# generate some data
+
+d_characters <-
+  data.frame(
+    "Name" = c("Ted", "Marshall", "Lily", "Robin", "Barney", "Viktoria"),
+    "Job" = c(
+      "Architect",
+      "Lawyer",
+      "Teacher",
+      "News-Anchor",
+      "PLEASE",
+      "Pastry chef"
+    ),
+    "Year_of_Birth" = c(1978, 1978, 1978, 1980, 1976, 1980)
+  )
+
+d_cast <-
+  data.frame(
+    "Name" = c(
+      "Josh Radnor",
+      "Bog Saget",
+      "Jason Segel",
+      "Alyson Hannigan",
+      "Cobie Smulders",
+      "Neil Patrick Harris",
+      "Cristin Millioti"
+    ),
+    "Role" = c("Ted", "Ted", "Marshall", "Lily", "Robin", "Barney", "Tracy"),
+    "Birthplace" = c(
+      "Ohio, US",
+      "Pennsylvania, US",
+      "California, US",
+      "Washington D.C., US",
+      "British Columbia, CA",
+      "New Mexico, US",
+      "New Jersey, US"
+    )
+  )
+```
+
+```{r tables, echo=FALSE}
+my_kable(d_cast, caption = "The main cast of HIMYM", label = "cast")
+my_kable(d_characters, caption = "The main characters of HIMYM", label = "char")
+```
+
+
+# Solution
+## Mutating Joins
+### Inner Join
+
+```{r inner_joinA, message=TRUE}
+# use inner join to merge the two dataframes
+df <- inner_join(d_cast, d_characters)
+```
+
+```{r, echo=FALSE, cache=T}
+my_kable(df, caption = "This empty dataframe is the result of the inner join - We got a problem ...", label = "innerA")
+```
+
+
+
+```{r inner_joinB}
+# use inner join to merge the two dataframes
+df <- inner_join(d_cast, d_characters, by = c("Role" = "Name"))
+
+# rename the Birthplace column, so that we know it refers to the birthplace of the actor
+df <- df %>% rename(Birthplace_actor = Birthplace)
+```
+
+```{r, echo=FALSE, cache=FALSE}
+my_kable(df, caption = "It looks much better now!", label = "innerB")
+```
+
+
+
+### Left Join
+
+```{r left_joinA, message=TRUE}
+# use left join to merge the two dataframes
+df <- left_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the left join.", label = "leftA")
+```
+
+
+```{r left_joinB, message=TRUE}
+# use left join to merge the two dataframes - note the switched arguments - note that we use a suffix now!
+df <- left_join(d_characters, d_cast, by = c("Name" = "Role"), suffix = c(".x", "_actor"))
+```
+
+```{r, echo=FALSE, cache=T}
+my_kable(df, caption = "The result of the left join with switched sides.", label = "leftB")
+```
+
+
+### Right Join
+
+```{r right_joinA, message=TRUE}
+# use right join to merge the two dataframes
+df <- right_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the right join.", label = "rightA")
+```
+
+### Full Join
+
+```{r full_join, message=TRUE}
+# use full join to merge the two dataframes
+df <- full_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the full join.", label = "full")
+```
+
+## Filtering joins
+### Anti Join
+
+```{r anti_join, message=TRUE}
+# use anti join to merge the two dataframes
+df <- anti_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the anti join.", label = "anti")
+```
+
+### Semi Join
+
+```{r semi_join, message=TRUE}
+# use semi join to merge the two dataframes
+df <- semi_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the semi join.", label = "semi")
+```
+
+## Nesting Join
+
+```{r nest_join, message=TRUE}
+# use nest join to merge the two dataframes
+df <- nest_join(d_cast, d_characters, by = c("Role" = "Name"))
+```
+
+```{r, echo=FALSE}
+my_kable(df, caption = "The result of the nesting join.", label = "nest")
+```
+
+# Further Stuff
