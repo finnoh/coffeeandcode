@@ -1,0 +1,165 @@
+---
+title: Time Series Clustering
+author: Finn
+date: '2020-11-13'
+slug: time-series-clustering
+categories:
+  - R
+tags:
+  - clustering
+  - modelling
+  - finance
+  - advanced
+image: images/ny1.jpg
+image_credit:
+code_lang: "R"
+description: "Awesome R code here"
+weight: 100
+---
+
+<img style="width:100%;" id="image" src="/images/ny1.jpg">
+
+<span>Photo by <a href="https://unsplash.com/@csoref?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Colton Duke</a> on <a href="https://unsplash.com/s/photos/new-york?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(cache = F, echo = TRUE, eval = TRUE, warning = FALSE, error = FALSE, message = FALSE)
+library(kableExtra)
+
+my_kable <- function(df, caption, label){
+  
+  num_cols <- ncol(df)
+  str_align <- rep("c", num_cols) %>% paste(collapse = "")
+  
+  
+  df %>% kbl(align = str_align, caption = caption, label = label) %>%  kable_material(c("responsive","condensed","hover"))
+}
+
+```
+
+
+```{r}
+rename_country <- function(col, str_list, repl_list){
+
+  for(i in (1:length(str_list))){
+    col <- str_replace(col, string = str_list[i], replacement = repl_list[i])
+  }
+  
+  return(col)
+  
+}
+```
+
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(WDI)
+library(kknn)
+library(plotly)
+library(rnaturalearth)
+library(sf)
+library(stringr)
+```
+
+
+
+
+```{r}
+codes <- c("SP.POP.TOTL", "SP.DYN.LE00.MA.IN", "SP.DYN.LE00.FE.IN")
+data <- WDI(start = 1960, end = 2000, indicator = codes)
+
+
+```
+
+```{r}
+data %>% slice(10)
+```
+
+
+
+```{r}
+df <- data
+
+df <- df %>% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)
+
+# fig <- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode="lines",text = ~paste("Year: ", year, '$<br>LE:', men), visible="legendonly")
+# fig
+
+```
+
+
+```{r}
+df_sub <- df %>% select(country, year, men) %>% pivot_wider(id_cols = country, names_from = year, values_from = men)
+country_vec <- df_sub$country
+df_sub <- df_sub %>% select(-country) %>% mutate_at(vars(1:41), ~replace(., is.na(.), 0))
+```
+
+
+
+
+
+```{r}
+result <- specClust(df_sub, centers = 5)
+df_sub$cluster <- result$cluster
+df_sub$country <- country_vec
+df_sub <- df_sub %>% pivot_longer(cols = c(-cluster, -country))
+
+df_tab <- df_sub %>% select(cluster, country) 
+df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>%  print()
+
+```
+
+
+```{r}
+df_plot <- df_sub %>% dplyr::group_by(name, cluster) %>% summarise(men = mean(value)) 
+p1 <- ggplot(df_plot, aes(x = name, y = men, color = factor(cluster), group = factor(cluster)))
+p1 + geom_line()
+```
+
+```{r}
+iso <- df %>% select(country, iso2c) %>% dplyr::distinct()
+data_clust <- df_sub %>% select(country, cluster) %>% dplyr::distinct()
+data_clust <- data_clust %>% left_join(iso)
+data_clust$iso2c <- data_clust$iso2c %>% as.character()
+
+# adjust some of the names for better merging 	 	
+data_clust$country <- str_replace(data_clust$country, pattern = "United States", replacement = "USA")
+data_clust$country <- str_replace(data_clust$country, pattern = "Russian Federation", replacement = "Russia")
+data_clust$country <- str_replace(data_clust$country, pattern = "Congo, Dem. Rep.", replacement = "Democratic Republic of the Congo")
+data_clust$country <- str_replace(data_clust$country, pattern = "Cote d'Ivoire", replacement = "Ivory Coast")
+data_clust$country <- str_replace(data_clust$country, pattern = "Egypt, Arab Rep.", replacement = "Egypt")
+data_clust$country <- str_replace(data_clust$country, pattern = "Syrian Arab Republic", replacement = "Syria")
+data_clust$country <- str_replace(data_clust$country, pattern = "United Kingdom", replacement = "UK")
+data_clust$country <- str_replace(data_clust$country, pattern = "Iran, Islamic Rep.", replacement = "Iran")
+data_clust$country <- str_replace(data_clust$country, pattern = "Kyrgyz Republic", replacement = "Kyrgyzstan")
+data_clust$country <- str_replace(data_clust$country, pattern = "Gambia, The", replacement = "Gambia")
+data_clust$country <- str_replace(data_clust$country, pattern = "Venezuela, RB", replacement = "Venezuela")
+data_clust$country <- str_replace(data_clust$country, pattern = "Eswatini", replacement = "Swaziland")
+data_clust$country <- str_replace(data_clust$country, pattern = "Korea, Dem. Peopleâ€™s Rep.", replacement = "North Korea")
+data_clust$country <- str_replace(data_clust$country, pattern = "Korea, Rep.", replacement = "South Korea")
+data_clust$country <- str_replace(data_clust$country, pattern = "Yemen, Rep.", replacement = "Yemen")
+data_clust$country <- str_replace(data_clust$country, pattern = "Congo, Rep.", replacement = "Republic of Congo")
+data_clust$country <- str_replace(data_clust$country, pattern = "Lao PDR", replacement = "Laos")
+
+
+# str_list = c("United States", "Russian Federation", "Congo, Dem. Rep")
+# repl_list = c("USA", "Russia", "Democratic Republic of the Congo")
+# 
+# data_clust$country <- rename_country(data_clust$country, str_list = str_list, repl_list = repl_list)
+
+data_map <- map_data("world")
+df_map <- dplyr::left_join(data_map, data_clust, by = c("region" = "country"))
+analy <- dplyr::anti_join(data_map, data_clust, by = c("region" = "country"))
+analy %>% select(region) %>% distinct()
+
+```
+
+
+```{r}
+# 5
+p2 <- ggplot(df_map, aes(x = long, y = lat, group = group, fill = factor(cluster)))
+p2 + geom_polygon(color = "white") + scale_fill_discrete(na.value="grey70") + theme_void() + coord_quickmap() + labs(fill = "Cluster")
+```
+

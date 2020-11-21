@@ -1,0 +1,145 @@
+---
+title: Time Series Clustering
+author: Finn
+date: '2020-11-13'
+slug: time-series-clustering
+categories:
+  - R
+tags:
+  - clustering
+  - modelling
+  - finance
+  - advanced
+image: images/diff_nat.jpg
+image_credit:
+code_lang: "R"
+description: "Awesome R code here"
+weight: 100
+---
+
+<img style="width:100%;" id="image" src="/images/diff_nat.jpg">
+
+Image by <a href="https://pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Alexas_Fotos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Pixabay</a>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(cache = F, echo = TRUE, eval = TRUE, warning = FALSE, error = FALSE, message = FALSE)
+library(kableExtra)
+
+my_kable <- function(df, caption, label){
+  
+  num_cols <- ncol(df)
+  str_align <- rep("c", num_cols) %>% paste(collapse = "")
+  
+  
+  df %>% kbl(align = str_align, caption = caption, label = label) %>%  kable_material(c("responsive","condensed","hover"))
+}
+
+```
+
+
+```{r}
+rename_country <- function(col, str_list, repl_list){
+
+  for(i in (1:length(str_list))){
+    col <- str_replace(col, string = str_list[i], replacement = repl_list[i])
+  }
+  
+  return(col)
+  
+}
+```
+
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(WDI)
+library(kknn)
+library(plotly)
+library(rnaturalearth)
+library(sf)
+library(stringr)
+```
+
+
+
+
+```{r}
+codes <- c("SP.POP.TOTL", "SP.DYN.LE00.MA.IN", "SP.DYN.LE00.FE.IN")
+data <- WDI(start = 1960, end = 2000, indicator = codes)
+
+
+```
+
+```{r}
+data %>% slice(10)
+```
+
+
+
+```{r}
+df <- data
+
+df <- df %>% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)
+
+# fig <- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode="lines",text = ~paste("Year: ", year, '$<br>LE:', men), visible="legendonly")
+# fig
+
+```
+
+
+```{r}
+df_sub <- df %>% select(country, year, men) %>% pivot_wider(id_cols = country, names_from = year, values_from = men)
+country_vec <- df_sub$country
+df_sub <- df_sub %>% select(-country) %>% mutate_at(vars(1:41), ~replace(., is.na(.), 0))
+```
+
+
+
+
+
+```{r}
+result <- specClust(df_sub, centers = 5)
+df_sub$cluster <- result$cluster
+df_sub$country <- country_vec
+df_sub <- df_sub %>% pivot_longer(cols = c(-cluster, -country))
+
+df_tab <- df_sub %>% select(cluster, country) 
+df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>%  print()
+
+```
+
+
+```{r}
+df_plot <- df_sub %>% dplyr::group_by(name, cluster) %>% summarise(men = mean(value)) 
+p1 <- ggplot(df_plot, aes(x = name, y = men, color = factor(cluster), group = factor(cluster)))
+p1 + geom_line()
+```
+
+
+```{r}
+iso <- df %>% select(country, iso2c) %>% dplyr::distinct()
+data_clust <- df_sub %>% select(country, cluster) %>% dplyr::distinct()
+data_clust <- data_clust %>% left_join(iso)
+data_clust$iso2c <- data_clust$iso2c %>% as.character()
+
+# adjust some of the names for better merging 	 	
+
+repl_vec <- c("United States" = "USA", "Russian Federation" = "Russia", "Congo, Dem. Rep." = "Democratic Republic of the Congo", "Cote d'Ivoire" = "Ivory Coast","Egypt, Arab Rep." = "Egypt", "Syrian Arab Republic" = "Syria", "United Kingdom" = "UK", "Iran, Islamic Rep." = "Iran", "Kyrgyz Republic" = "Kyrgyzstan", "Gambia, The" = "Gambia", "Venezuela, RB" = "Venezuela", "Eswatini" = "Swaziland", "Korea, Dem. Peopleâ€™s Rep." = "North Korea", "Korea, Rep." = "South Korea", "Yemen, Rep." = "Yemen", "Congo, Rep." = "Republic of Congo", "Lao PDR" = "Laos")
+
+data_clust$country <- data_clust$country %>% str_replace_all(repl_vec)
+
+data_map <- map_data("world")
+df_map <- dplyr::left_join(data_map, data_clust, by = c("region" = "country"))
+```
+
+
+
+
+```{r}
+# 5
+p2 <- ggplot(df_map, aes(x = long, y = lat, group = group, fill = factor(cluster)))
+p2 + geom_polygon(color = "white") + scale_fill_discrete(na.value="grey70") + theme_void() + coord_quickmap() + labs(fill = "Cluster")
+```
+
