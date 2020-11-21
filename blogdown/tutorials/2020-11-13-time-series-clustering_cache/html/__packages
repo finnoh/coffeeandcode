@@ -1,0 +1,14 @@
+base
+kableExtra
+ggplot2
+tidyr
+dplyr
+WDI
+kknn
+plotly
+rnaturalearth
+sf
+stringr
+RColorBrewer
+gridExtra
+png

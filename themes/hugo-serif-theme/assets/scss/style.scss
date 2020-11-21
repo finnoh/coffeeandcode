@@ -24,7 +24,7 @@ $sub-footer-text-color: $white;
 
 // Bootstrap
 @import 'bootstrap-variables';
-@import 'bootstrap/bootstrap-reboot';
+@import 'bootstrap/bootstrap-reboot'; 
 @import 'bootstrap/bootstrap-grid';
 @import 'bootstrap/bootstrap'; // Uncomment this line to import the entire Bootstrap library
 
@@ -58,11 +58,12 @@ $sub-footer-text-color: $white;
 @import 'pages/services/page-services-single';
 
 body {
-  font-size: 18px;
+  width: 100%;
+  font-size: 16px;
   line-height: 1.5;
   font-family: $font-family-base;
   @include media-breakpoint-up(md) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
   }
 }
