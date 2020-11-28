@@ -1,0 +1,258 @@
+---
+title: Life Expectancy - Time Series Clustering
+author: Finn
+date: '2020-11-13'
+slug: time-series-clustering
+categories:
+  - R
+tags:
+  - clustering
+  - modelling
+  - economics
+  - advanced
+image: images/diff_nat.jpg
+image_credit:
+code_lang: "R"
+description: "How has the life expectancy developed over different countries?"
+weight: 100
+featured: yes
+---
+
+<img src="/images/diff_nat.jpg">
+
+Image by <a href="https://pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Alexas_Fotos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Pixabay</a>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+  cache = F,
+  echo = TRUE,
+  eval = TRUE,
+  warning = FALSE,
+  error = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  out.width = "80%"
+)
+library(kableExtra)
+
+my_kable <- function(df, caption, label) {
+  num_cols <- ncol(df)
+  str_align <- rep("c", num_cols) %>% paste(collapse = "")
+  
+  
+  df %>% kbl(align = str_align,
+             caption = caption,
+             label = label) %>%  kable_material(c("responsive", "condensed", "hover"))
+}
+
+
+codejs <- readr::read_lines("js/codefolding.js")
+collapsejs <- readr::read_lines("js/collapse.js")
+transitionjs <- readr::read_lines("js/transition.js")
+
+htmlhead <- 
+  paste('
+<script>',
+paste(transitionjs, collapse = "\n"),
+'</script>
+<script>',
+paste(collapsejs, collapse = "\n"),
+'</script>
+<script>',
+paste(codejs, collapse = "\n"),
+'</script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+.row { display: flex; }
+.collapse { display: none; }
+.in { display:block }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+', sep = "\n")
+
+readr::write_lines(htmlhead, path = "../../themes/hugo-serif-theme/layouts/tutorials/code_fold.html")
+
+
+```
+
+# Life Expectancy in different countries
+
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(WDI)
+library(kknn)
+library(plotly)
+library(rnaturalearth)
+library(sf)
+library(stringr)
+library(RColorBrewer)
+library(gridExtra)
+library(grid)
+library(png)
+library(mapproj)
+```
+
+
+
+```{r}
+start_year = 1960
+end_year = 2010
+span_year = end_year - start_year + 1
+
+codes <- c("SP.POP.TOTL", "SP.DYN.LE00.MA.IN", "SP.DYN.LE00.FE.IN")
+data <- WDI(start = start_year, end = end_year, indicator = codes)
+
+
+```
+
+
+
+```{r}
+df <- data
+
+df <- df %>% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)
+df$avg_le <- (df$men + df$women)/2
+
+# fig <- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode="lines",text = ~paste("Year: ", year, '$<br>LE:', men), visible="legendonly")
+# fig
+
+```
+
+
+```{r}
+df_sub <- df %>% select(country, year, avg_le) %>% pivot_wider(id_cols = country, names_from = year, values_from = avg_le)
+country_vec <- df_sub$country
+df_sub <- df_sub %>% select(-country) %>% mutate_all( ~replace(., is.na(.), 0))
+```
+
+
+
+
+
+```{r}
+set.seed(42)
+
+n_clust = 4
+result <- specClust(df_sub, centers = n_clust)
+
+df_sub$cluster <- result$cluster
+df_sub$country <- country_vec
+df_sub <- df_sub %>% pivot_longer(cols = c(-cluster, -country))
+
+df_tab <- df_sub %>% select(cluster, country) 
+df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>%  print()
+
+```
+```{r}
+# color palette for plots
+
+col_palette <- brewer.pal(n_clust, "Dark2")
+names(col_palette) <- levels(df_sub$cluster)
+
+scale_color_cc <-
+  scale_colour_manual(
+                      values = col_palette,
+                      na.value = "grey80")
+scale_fill_cc <-
+  scale_fill_manual(
+                    values = col_palette,
+                    na.value = "grey80")
+
+```
+
+
+```{r}
+df_plot <-
+  df_sub %>% dplyr::group_by(name, cluster) %>% summarise(avg_le = mean(value))
+
+p1 <-
+  ggplot(df_plot, aes(
+    x = as.Date(name, format = "%Y"),
+    y = avg_le,
+    color = factor(cluster),
+    group = factor(cluster)
+  ))
+p1 + geom_line()  + theme_bw() + scale_color_cc + labs(color = "Cluster", x = "Year", y = "Avg. LE") + scale_x_date() + theme(legend.position = "bottom")
+
+```
+```{r}
+df_sub$cluster <- df_sub$cluster %>% factor(labels = c("More developed", "Developed", "Less Developed", "???"))
+```
+
+
+```{r}
+iso <- df %>% select(country, iso2c) %>% dplyr::distinct()
+data_clust <-
+  df_sub %>% select(country, cluster) %>% dplyr::distinct()
+data_clust <- data_clust %>% left_join(iso)
+data_clust$iso2c <- data_clust$iso2c %>% as.character()
+
+# adjust some of the names for better merging
+
+repl_vec <-
+  c(
+    "United States" = "USA",
+    "Russian Federation" = "Russia",
+    "Congo, Dem. Rep." = "Democratic Republic of the Congo",
+    "Cote d'Ivoire" = "Ivory Coast",
+    "Egypt, Arab Rep." = "Egypt",
+    "Syrian Arab Republic" = "Syria",
+    "United Kingdom" = "UK",
+    "Iran, Islamic Rep." = "Iran",
+    "Kyrgyz Republic" = "Kyrgyzstan",
+    "Gambia, The" = "Gambia",
+    "Venezuela, RB" = "Venezuela",
+    "Eswatini" = "Swaziland",
+    "Korea, Dem. Peopleâ€™s Rep." = "North Korea",
+    "Korea, Rep." = "South Korea",
+    "Yemen, Rep." = "Yemen",
+    "Congo, Rep." = "Republic of Congo",
+    "Lao PDR" = "Laos"
+  )
+
+data_clust$country <-
+  data_clust$country %>% str_replace_all(repl_vec)
+
+data_map <- map_data("world")
+df_map <-
+  dplyr::left_join(data_map, data_clust, by = c("region" = "country"))
+
+```
+
+
+```{r, eval=T}
+# read image files
+img1 <- readPNG('time_series_clustering_1.png')
+
+# convert images to objects that gridExtra can handle
+image1 <- rasterGrob(img1, interpolate=TRUE)
+```
+
+
+
+
+
+```{r, fig.cap="[Based on this image.](https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg)"}
+# 5
+p2 <-
+  ggplot(df_map, aes(
+    x = long,
+    y = lat,
+    group = group,
+    fill = cluster
+  ))
+
+p2 <-
+  p2 + geom_polygon(color = "white") + theme_void() + coord_quickmap() + scale_fill_cc + labs(fill = "Cluster") + theme(legend.position = "bottom")
+
+p_arrange <- grid.arrange(image1, p2, nrow = 2)
+p_arrange
+
+```

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Life Expectancy - Time Series Clustering - Share and connect.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.min.af34ded143163391aef92446e3847f1250e5e859feab749cfad184f1cd3c4f54.css">
+  
+
+  
+
+</head>
+
+<body class='page page-services-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img height=140px alt="Coffee and Code" src="/images/logo/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/"><img alt="Coffee and Code" src="/images/logo/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+    
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <h1 class="title">Life Expectancy - Time Series Clustering</h1>
+        <div class="content">
+
+
+<p><img src="/images/diff_nat.jpg"></p>
+<p>Image by <a href="https://pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Alexas_Fotos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Pixabay</a></p>
+<div id="life-expectancy-in-different-countries" class="section level1">
+<h1>Life Expectancy in different countries</h1>
+<pre class="r"><code>library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(WDI)
+library(kknn)
+library(plotly)
+library(rnaturalearth)
+library(sf)
+library(stringr)
+library(RColorBrewer)
+library(gridExtra)
+library(grid)
+library(png)
+library(mapproj)</code></pre>
+<pre class="r"><code>start_year = 1960
+end_year = 2010
+span_year = end_year - start_year + 1
+
+codes &lt;- c(&quot;SP.POP.TOTL&quot;, &quot;SP.DYN.LE00.MA.IN&quot;, &quot;SP.DYN.LE00.FE.IN&quot;)
+data &lt;- WDI(start = start_year, end = end_year, indicator = codes)</code></pre>
+<pre class="r"><code>df &lt;- data
+
+df &lt;- df %&gt;% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)
+df$avg_le &lt;- (df$men + df$women)/2
+
+# fig &lt;- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode=&quot;lines&quot;,text = ~paste(&quot;Year: &quot;, year, &#39;$&lt;br&gt;LE:&#39;, men), visible=&quot;legendonly&quot;)
+# fig</code></pre>
+<pre class="r"><code>df_sub &lt;- df %&gt;% select(country, year, avg_le) %&gt;% pivot_wider(id_cols = country, names_from = year, values_from = avg_le)
+country_vec &lt;- df_sub$country
+df_sub &lt;- df_sub %&gt;% select(-country) %&gt;% mutate_all( ~replace(., is.na(.), 0))</code></pre>
+<pre class="r"><code>set.seed(42)
+
+n_clust = 4
+result &lt;- specClust(df_sub, centers = n_clust)
+
+df_sub$cluster &lt;- result$cluster
+df_sub$country &lt;- country_vec
+df_sub &lt;- df_sub %&gt;% pivot_longer(cols = c(-cluster, -country))
+
+df_tab &lt;- df_sub %&gt;% select(cluster, country) 
+df_tab %&gt;% dplyr::distinct() %&gt;% dplyr::filter(cluster == 4) %&gt;%  print()</code></pre>
+<pre><code>## # A tibble: 28 x 2
+##    cluster country            
+##      &lt;int&gt; &lt;chr&gt;              
+##  1       4 Andorra            
+##  2       4 American Samoa     
+##  3       4 Bermuda            
+##  4       4 Curacao            
+##  5       4 Dominica           
+##  6       4 Faroe Islands      
+##  7       4 Gibraltar          
+##  8       4 Greenland          
+##  9       4 Isle of Man        
+## 10       4 St. Kitts and Nevis
+## # ... with 18 more rows</code></pre>
+<pre class="r"><code># color palette for plots
+
+col_palette &lt;- brewer.pal(n_clust, &quot;Dark2&quot;)
+names(col_palette) &lt;- levels(df_sub$cluster)
+
+scale_color_cc &lt;-
+  scale_colour_manual(
+                      values = col_palette,
+                      na.value = &quot;grey80&quot;)
+scale_fill_cc &lt;-
+  scale_fill_manual(
+                    values = col_palette,
+                    na.value = &quot;grey80&quot;)</code></pre>
+<pre class="r"><code>df_plot &lt;-
+  df_sub %&gt;% dplyr::group_by(name, cluster) %&gt;% summarise(avg_le = mean(value))
+
+p1 &lt;-
+  ggplot(df_plot, aes(
+    x = as.Date(name, format = &quot;%Y&quot;),
+    y = avg_le,
+    color = factor(cluster),
+    group = factor(cluster)
+  ))
+p1 + geom_line()  + theme_bw() + scale_color_cc + labs(color = &quot;Cluster&quot;, x = &quot;Year&quot;, y = &quot;Avg. LE&quot;) + scale_x_date() + theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="/services/2020-11-13-time-series-clustering_files/figure-html/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>df_sub$cluster &lt;- df_sub$cluster %&gt;% factor(labels = c(&quot;More developed&quot;, &quot;Developed&quot;, &quot;Less Developed&quot;, &quot;???&quot;))</code></pre>
+<pre class="r"><code>iso &lt;- df %&gt;% select(country, iso2c) %&gt;% dplyr::distinct()
+data_clust &lt;-
+  df_sub %&gt;% select(country, cluster) %&gt;% dplyr::distinct()
+data_clust &lt;- data_clust %&gt;% left_join(iso)
+data_clust$iso2c &lt;- data_clust$iso2c %&gt;% as.character()
+
+# adjust some of the names for better merging
+
+repl_vec &lt;-
+  c(
+    &quot;United States&quot; = &quot;USA&quot;,
+    &quot;Russian Federation&quot; = &quot;Russia&quot;,
+    &quot;Congo, Dem. Rep.&quot; = &quot;Democratic Republic of the Congo&quot;,
+    &quot;Cote d&#39;Ivoire&quot; = &quot;Ivory Coast&quot;,
+    &quot;Egypt, Arab Rep.&quot; = &quot;Egypt&quot;,
+    &quot;Syrian Arab Republic&quot; = &quot;Syria&quot;,
+    &quot;United Kingdom&quot; = &quot;UK&quot;,
+    &quot;Iran, Islamic Rep.&quot; = &quot;Iran&quot;,
+    &quot;Kyrgyz Republic&quot; = &quot;Kyrgyzstan&quot;,
+    &quot;Gambia, The&quot; = &quot;Gambia&quot;,
+    &quot;Venezuela, RB&quot; = &quot;Venezuela&quot;,
+    &quot;Eswatini&quot; = &quot;Swaziland&quot;,
+    &quot;Korea, Dem. Peopleâ€™s Rep.&quot; = &quot;North Korea&quot;,
+    &quot;Korea, Rep.&quot; = &quot;South Korea&quot;,
+    &quot;Yemen, Rep.&quot; = &quot;Yemen&quot;,
+    &quot;Congo, Rep.&quot; = &quot;Republic of Congo&quot;,
+    &quot;Lao PDR&quot; = &quot;Laos&quot;
+  )
+
+data_clust$country &lt;-
+  data_clust$country %&gt;% str_replace_all(repl_vec)
+
+data_map &lt;- map_data(&quot;world&quot;)
+df_map &lt;-
+  dplyr::left_join(data_map, data_clust, by = c(&quot;region&quot; = &quot;country&quot;))</code></pre>
+<pre class="r"><code># read image files
+img1 &lt;- readPNG(&#39;time_series_clustering_1.png&#39;)
+
+# convert images to objects that gridExtra can handle
+image1 &lt;- rasterGrob(img1, interpolate=TRUE)</code></pre>
+<pre class="r"><code># 5
+p2 &lt;-
+  ggplot(df_map, aes(
+    x = long,
+    y = lat,
+    group = group,
+    fill = cluster
+  ))
+
+p2 &lt;-
+  p2 + geom_polygon(color = &quot;white&quot;) + theme_void() + coord_quickmap() + scale_fill_cc + labs(fill = &quot;Cluster&quot;) + theme(legend.position = &quot;bottom&quot;)
+
+p_arrange &lt;- grid.arrange(image1, p2, nrow = 2)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="/services/2020-11-13-time-series-clustering_files/figure-html/unnamed-chunk-12-1.png" alt="[Based on this image.](https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg)" width="80%" />
+<p class="caption">
+Figure 1: <a href="https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg">Based on this image.</a>
+</p>
+</div>
+<pre class="r"><code>p_arrange</code></pre>
+<pre><code>## TableGrob (2 x 1) &quot;arrange&quot;: 2 grobs
+##   z     cells    name                           grob
+## 1 1 (1-1,1-1) arrange rastergrob[GRID.rastergrob.84]
+## 2 2 (2-2,1-1) arrange                 gtable[layout]</code></pre>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <h3 class="footer-title">Share and connect.</h3>
+          <ul>
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            
+<div class="social">
+    
+        <a href="https://github.com/finnoh" target="blank"><img src="/images/social/github.svg" title="Github" alt="Github" /></a>
+    
+        <a href="https://zerostatic.io" target="blank"><img src="/images/social/github.svg" title="Hugo Serif Theme" alt="Hugo Serif Theme" /></a>
+    
+</div>
+
+          
+          
+            <div class="copyright">Blog by <a class="zerostatic" href="https://github.com/finnoh">Finn Hoener - 2020</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+
+
+
+
+  <script type="text/javascript" src="/js/services.min.96db5a4d9a7ea2d1759fd6847940367b5207c4ef5686df932179e04aefccdf37.js"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/scripts.min.bf1e1f7ae8e03db5f012356e825843facdff51c0a559cb0d27fe2bbe1db405c2.js"></script>
+  
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>

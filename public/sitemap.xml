@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>/services/time-series-clustering/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorials/time-series-clustering/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
@@ -54,6 +59,11 @@
   
   <url>
     <loc>/tags/advanced/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -125,11 +135,6 @@
   <url>
     <loc>/404/whoops/</loc>
     <lastmod>2020-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>

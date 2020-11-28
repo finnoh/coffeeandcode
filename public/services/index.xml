@@ -6,7 +6,17 @@
     <description>Recent content in Articles on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/services/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life Expectancy - Time Series Clustering</title>
+      <link>/services/time-series-clustering/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/services/time-series-clustering/</guid>
+      <description>Image by Alexas_Fotos from Pixabay
+Life Expectancy in different countrieslibrary(ggplot2)library(tidyr)library(dplyr)library(WDI)library(kknn)library(plotly)library(rnaturalearth)library(sf)library(stringr)library(RColorBrewer)library(gridExtra)library(grid)library(png)library(mapproj)start_year = 1960end_year = 2010span_year = end_year - start_year + 1codes &amp;lt;- c(&amp;quot;SP.POP.TOTL&amp;quot;, &amp;quot;SP.DYN.LE00.MA.IN&amp;quot;, &amp;quot;SP.DYN.LE00.FE.IN&amp;quot;)data &amp;lt;- WDI(start = start_year, end = end_year, indicator = codes)df &amp;lt;- datadf &amp;lt;- df %&amp;gt;% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)df$avg_le &amp;lt;- (df$men + df$women)/2# fig &amp;lt;- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode=&amp;quot;lines&amp;quot;,text = ~paste(&amp;quot;Year: &amp;quot;, year, &amp;#39;$&amp;lt;br&amp;gt;LE:&amp;#39;, men), visible=&amp;quot;legendonly&amp;quot;)# figdf_sub &amp;lt;- df %&amp;gt;% select(country, year, avg_le) %&amp;gt;% pivot_wider(id_cols = country, names_from = year, values_from = avg_le)country_vec &amp;lt;- df_sub$countrydf_sub &amp;lt;- df_sub %&amp;gt;% select(-country) %&amp;gt;% mutate_all( ~replace(.</description>
+    </item>
+    
     <item>
       <title>First Article</title>
       <link>/services/recent-article/</link>

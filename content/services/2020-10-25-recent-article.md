@@ -8,7 +8,8 @@ tags: [test]
 intro_image: images/articles/nonsap-visuals-kMJp7620W6U-unsplash.jpg
 intro_image_absolute: no
 intro_image_hide_on_mobile: yes
-featured: yes
+featured: no
+draft: yes
 weight: 100
 description: "This is the first article of the blog."
 ---
