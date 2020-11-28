@@ -1,7 +1,7 @@
 theme = "hugo-serif-theme"
 baseURL = "https://finnoh.github.io/coffeeandcode/"
+#publishDir = "docs"
 languageCode = "en-us"
 title = "Share and connect."
 # ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
-publishDir = "docs"

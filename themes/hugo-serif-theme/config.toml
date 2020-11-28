@@ -1,7 +1,7 @@
 baseURL = "https://finnoh.github.io/coffeeandcode/"
 languageCode = "en-us"
 title = "Coffe and Code"
-publishDir = "docs"
+#publishDir = "docs"
 
 [params]
   # In most cases you will only want to use either one of these. If you have Google Analytics included in your GTM tags don't put your GA ID here. Otherwise your data might be useless.
