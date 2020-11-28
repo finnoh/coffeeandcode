@@ -3,223 +3,168 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/team/peter-van-eijk/</loc>
+    <loc>/coffeeandcode/team/peter-van-eijk/</loc>
     <lastmod>2018-11-19T10:47:58+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/sage-kirk/</loc>
+    <loc>/coffeeandcode/team/sage-kirk/</loc>
     <lastmod>2018-11-19T10:47:58+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/mike-vance/</loc>
+    <loc>/coffeeandcode/team/mike-vance/</loc>
     <lastmod>2018-12-20T13:44:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/robert-johnson/</loc>
+    <loc>/coffeeandcode/team/robert-johnson/</loc>
     <lastmod>2018-12-20T13:44:23+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/tamara-ells/</loc>
+    <loc>/coffeeandcode/team/tamara-ells/</loc>
     <lastmod>2018-12-20T13:44:55+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/susan-shelton/</loc>
+    <loc>/coffeeandcode/team/susan-shelton/</loc>
     <lastmod>2018-12-20T13:45:06+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/team/bill-mcdonald/</loc>
+    <loc>/coffeeandcode/team/bill-mcdonald/</loc>
     <lastmod>2018-11-19T10:47:58+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/services/time-series-clustering/</loc>
+    <loc>/coffeeandcode/services/time-series-clustering/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/time-series-clustering/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/join-in-merging-data-frames-in-r/</loc>
+    <loc>/coffeeandcode/tutorials/join-in-merging-data-frames-in-r/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/services/recent-article/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/advanced/</loc>
+    <loc>/coffeeandcode/tags/advanced/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/services/</loc>
+    <loc>/coffeeandcode/services/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/coffeeandcode/categories/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/clustering/</loc>
+    <loc>/coffeeandcode/tags/clustering/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/economics/</loc>
+    <loc>/coffeeandcode/tags/economics/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/coffeeandcode/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/modelling/</loc>
+    <loc>/coffeeandcode/tags/modelling/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>/coffeeandcode/categories/r/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/coffeeandcode/tags/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/basic/</loc>
+    <loc>/coffeeandcode/tags/basic/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/data-cleaning/</loc>
+    <loc>/coffeeandcode/tags/data-cleaning/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/tidyverse/</loc>
+    <loc>/coffeeandcode/tags/tidyverse/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/tutorial/</loc>
+    <loc>/coffeeandcode/tags/tutorial/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/404/</loc>
+    <loc>/coffeeandcode/tutorials/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/404/</loc>
     <lastmod>2020-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/404/whoops/</loc>
+    <loc>/coffeeandcode/404/whoops/</loc>
     <lastmod>2020-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/first/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/first-guide/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/first-r-code/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/test/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/test/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/team/</loc>
+    <loc>/coffeeandcode/team/</loc>
     <lastmod>2018-12-20T13:45:06+10:00</lastmod>
   </url>
   
   <url>
-    <loc>/contact/contact/</loc>
+    <loc>/coffeeandcode/contact/contact/</loc>
     <lastmod>2018-02-22T17:01:34+07:00</lastmod>
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>/coffeeandcode/contact/</loc>
     <lastmod>2018-02-22T17:01:34+07:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+    <loc>/coffeeandcode/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
+    <loc>/coffeeandcode/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/coffeeandcode/post/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>/coffeeandcode/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/regression/</loc>
+    <loc>/coffeeandcode/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/one/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorials/python_rmd/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/tag-a/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/tag-b/</loc>
-  </url>
-  
-  <url>
-    <loc>/categories/two/</loc>
   </url>
   
 </urlset>

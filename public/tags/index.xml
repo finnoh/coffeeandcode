@@ -2,143 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Share and connect.</title>
-    <link>/tags/</link>
+    <link>/coffeeandcode/tags/</link>
     <description>Recent content in Tags on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/coffeeandcode/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>advanced</title>
-      <link>/tags/advanced/</link>
+      <link>/coffeeandcode/tags/advanced/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/advanced/</guid>
+      <guid>/coffeeandcode/tags/advanced/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clustering</title>
-      <link>/tags/clustering/</link>
+      <link>/coffeeandcode/tags/clustering/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/clustering/</guid>
+      <guid>/coffeeandcode/tags/clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>economics</title>
-      <link>/tags/economics/</link>
+      <link>/coffeeandcode/tags/economics/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/economics/</guid>
+      <guid>/coffeeandcode/tags/economics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>modelling</title>
-      <link>/tags/modelling/</link>
+      <link>/coffeeandcode/tags/modelling/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/modelling/</guid>
+      <guid>/coffeeandcode/tags/modelling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>basic</title>
-      <link>/tags/basic/</link>
+      <link>/coffeeandcode/tags/basic/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/basic/</guid>
+      <guid>/coffeeandcode/tags/basic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data cleaning</title>
-      <link>/tags/data-cleaning/</link>
+      <link>/coffeeandcode/tags/data-cleaning/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/data-cleaning/</guid>
+      <guid>/coffeeandcode/tags/data-cleaning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tidyverse</title>
-      <link>/tags/tidyverse/</link>
+      <link>/coffeeandcode/tags/tidyverse/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tidyverse/</guid>
+      <guid>/coffeeandcode/tags/tidyverse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>/tags/tutorial/</link>
+      <link>/coffeeandcode/tags/tutorial/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tutorial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>first</title>
-      <link>/tags/first/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/first/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>/tags/test/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/test/</guid>
+      <guid>/coffeeandcode/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>/tags/plot/</link>
+      <link>/coffeeandcode/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>/coffeeandcode/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
+      <link>/coffeeandcode/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>/coffeeandcode/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>/tags/regression/</link>
+      <link>/coffeeandcode/tags/regression/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag a</title>
-      <link>/tags/tag-a/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tag-a/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag b</title>
-      <link>/tags/tag-b/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tag-b/</guid>
+      <guid>/coffeeandcode/tags/regression/</guid>
       <description></description>
     </item>
     

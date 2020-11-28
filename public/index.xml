@@ -2,170 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Share and connect.</title>
-    <link>/</link>
+    <link>/coffeeandcode/</link>
     <description>Recent content in Home on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/coffeeandcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Peter Van Eijk</title>
-      <link>/team/peter-van-eijk/</link>
+      <link>/coffeeandcode/team/peter-van-eijk/</link>
       <pubDate>Mon, 19 Nov 2018 10:47:58 +1000</pubDate>
       
-      <guid>/team/peter-van-eijk/</guid>
+      <guid>/coffeeandcode/team/peter-van-eijk/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
       <title>Sage Kirk</title>
-      <link>/team/sage-kirk/</link>
+      <link>/coffeeandcode/team/sage-kirk/</link>
       <pubDate>Mon, 19 Nov 2018 10:47:58 +1000</pubDate>
       
-      <guid>/team/sage-kirk/</guid>
+      <guid>/coffeeandcode/team/sage-kirk/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</description>
     </item>
     
     <item>
       <title>Mike Vance</title>
-      <link>/team/mike-vance/</link>
+      <link>/coffeeandcode/team/mike-vance/</link>
       <pubDate>Thu, 20 Dec 2018 13:44:30 +1000</pubDate>
       
-      <guid>/team/mike-vance/</guid>
+      <guid>/coffeeandcode/team/mike-vance/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</description>
     </item>
     
     <item>
       <title>Robert Johnson</title>
-      <link>/team/robert-johnson/</link>
+      <link>/coffeeandcode/team/robert-johnson/</link>
       <pubDate>Thu, 20 Dec 2018 13:44:23 +1000</pubDate>
       
-      <guid>/team/robert-johnson/</guid>
+      <guid>/coffeeandcode/team/robert-johnson/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</description>
     </item>
     
     <item>
       <title>Tamara Ells</title>
-      <link>/team/tamara-ells/</link>
+      <link>/coffeeandcode/team/tamara-ells/</link>
       <pubDate>Thu, 20 Dec 2018 13:44:55 +1000</pubDate>
       
-      <guid>/team/tamara-ells/</guid>
+      <guid>/coffeeandcode/team/tamara-ells/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</description>
     </item>
     
     <item>
       <title>Susan Shelton</title>
-      <link>/team/susan-shelton/</link>
+      <link>/coffeeandcode/team/susan-shelton/</link>
       <pubDate>Thu, 20 Dec 2018 13:45:06 +1000</pubDate>
       
-      <guid>/team/susan-shelton/</guid>
+      <guid>/coffeeandcode/team/susan-shelton/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</description>
     </item>
     
     <item>
       <title>Bill McDonald</title>
-      <link>/team/bill-mcdonald/</link>
+      <link>/coffeeandcode/team/bill-mcdonald/</link>
       <pubDate>Mon, 19 Nov 2018 10:47:58 +1000</pubDate>
       
-      <guid>/team/bill-mcdonald/</guid>
+      <guid>/coffeeandcode/team/bill-mcdonald/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
       <title>Life Expectancy - Time Series Clustering</title>
-      <link>/services/time-series-clustering/</link>
+      <link>/coffeeandcode/services/time-series-clustering/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/services/time-series-clustering/</guid>
-      <description>Image by Alexas_Fotos from Pixabay
-Life Expectancy in different countrieslibrary(ggplot2)library(tidyr)library(dplyr)library(WDI)library(kknn)library(plotly)library(rnaturalearth)library(sf)library(stringr)library(RColorBrewer)library(gridExtra)library(grid)library(png)library(mapproj)start_year = 1960end_year = 2010span_year = end_year - start_year + 1codes &amp;lt;- c(&amp;quot;SP.POP.TOTL&amp;quot;, &amp;quot;SP.DYN.LE00.MA.IN&amp;quot;, &amp;quot;SP.DYN.LE00.FE.IN&amp;quot;)data &amp;lt;- WDI(start = start_year, end = end_year, indicator = codes)df &amp;lt;- datadf &amp;lt;- df %&amp;gt;% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)df$avg_le &amp;lt;- (df$men + df$women)/2# fig &amp;lt;- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode=&amp;quot;lines&amp;quot;,text = ~paste(&amp;quot;Year: &amp;quot;, year, &amp;#39;$&amp;lt;br&amp;gt;LE:&amp;#39;, men), visible=&amp;quot;legendonly&amp;quot;)# figdf_sub &amp;lt;- df %&amp;gt;% select(country, year, avg_le) %&amp;gt;% pivot_wider(id_cols = country, names_from = year, values_from = avg_le)country_vec &amp;lt;- df_sub$countrydf_sub &amp;lt;- df_sub %&amp;gt;% select(-country) %&amp;gt;% mutate_all( ~replace(.</description>
-    </item>
-    
-    <item>
-      <title>Life Expectancy - Time Series Clustering</title>
-      <link>/tutorials/time-series-clustering/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/time-series-clustering/</guid>
-      <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
+      <guid>/coffeeandcode/services/time-series-clustering/</guid>
+      <description>Image by Alexas_Fotos from Pixabay
+Life Expectancy in different countriesFigure 1: Based on this image.</description>
     </item>
     
     <item>
       <title>Join in! Merging Data Frames in R</title>
-      <link>/tutorials/join-in-merging-data-frames-in-r/</link>
+      <link>/coffeeandcode/tutorials/join-in-merging-data-frames-in-r/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/join-in-merging-data-frames-in-r/</guid>
+      <guid>/coffeeandcode/tutorials/join-in-merging-data-frames-in-r/</guid>
       <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
-    </item>
-    
-    <item>
-      <title>First Article</title>
-      <link>/services/recent-article/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/services/recent-article/</guid>
-      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
-Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
- Cum det dixit Parcarum qui spemque est Exit ex huic Quod consiste agitataque claustraque vicina videt lacertis Loquor videt Ardua non igne caelesti coniugis cognovi diversorum Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus.</description>
     </item>
     
     <item>
       <title>Whoops</title>
-      <link>/404/whoops/</link>
+      <link>/coffeeandcode/404/whoops/</link>
       <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/404/whoops/</guid>
+      <guid>/coffeeandcode/404/whoops/</guid>
       <description>404 </description>
     </item>
     
     <item>
-      <title>First guide</title>
-      <link>/tutorials/first-guide/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/first-guide/</guid>
-      <description>Start thisa is the guide</description>
-    </item>
-    
-    <item>
-      <title>First R Code</title>
-      <link>/tutorials/first-r-code/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/first-r-code/</guid>
-      <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
-    </item>
-    
-    <item>
       <title>Contact</title>
-      <link>/contact/contact/</link>
+      <link>/coffeeandcode/contact/contact/</link>
       <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
       
-      <guid>/contact/contact/</guid>
+      <guid>/coffeeandcode/contact/contact/</guid>
       <description>About I am a graduate student in &amp;ldquo;Data Science in Business and Economics&amp;rdquo; at the University of Tübingen. During my studies, I have assisted at the university as a tutor and student research assistant. Currently, I am doing a semster abroad at Texas A&amp;amp;M university in economics. Recently, I was an intern in data science at Lidl.
 As part of my bachelors thesis, I have analysed the Hot Hand phenomenon in NCAA basketball.</description>
     </item>
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <link>/coffeeandcode/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>/coffeeandcode/post/2015-07-23-r-rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Python rmd</title>
-      <link>/tutorials/python_rmd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/python_rmd/</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;&#34;,&#34;success&#34;:&#34;&#34;,&#34;error&#34;:&#34;&#34;})a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
     </item>
     
   </channel>

@@ -24,14 +24,15 @@ Image by <a href="https://pixabay.com/users/alexas_fotos-686414/?utm_source=link
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(
-  cache = F,
-  echo = TRUE,
+  cache = FALSE,
+  echo = FALSE,
   eval = TRUE,
   warning = FALSE,
   error = FALSE,
   message = FALSE,
+  results = "hide",
   fig.align = "center",
-  out.width = "80%"
+  out.width = "100%"
 )
 library(kableExtra)
 

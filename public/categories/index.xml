@@ -2,44 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Share and connect.</title>
-    <link>/categories/</link>
+    <link>/coffeeandcode/categories/</link>
     <description>Recent content in Categories on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/coffeeandcode/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>/coffeeandcode/categories/r/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>/categories/test/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>one</title>
-      <link>/categories/one/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/one/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>two</title>
-      <link>/categories/two/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/two/</guid>
+      <guid>/coffeeandcode/categories/r/</guid>
       <description></description>
     </item>
     
