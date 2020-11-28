@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/coffeeandcode/team/peter-van-eijk/</loc>
+    <lastmod>2018-11-19T10:47:58+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/sage-kirk/</loc>
+    <lastmod>2018-11-19T10:47:58+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/mike-vance/</loc>
+    <lastmod>2018-12-20T13:44:30+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/robert-johnson/</loc>
+    <lastmod>2018-12-20T13:44:23+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/tamara-ells/</loc>
+    <lastmod>2018-12-20T13:44:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/susan-shelton/</loc>
+    <lastmod>2018-12-20T13:45:06+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/bill-mcdonald/</loc>
+    <lastmod>2018-11-19T10:47:58+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/services/time-series-clustering/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tutorials/join-in-merging-data-frames-in-r/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/advanced/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/services/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/categories/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/clustering/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/economics/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/modelling/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/categories/r/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/basic/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/data-cleaning/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/tidyverse/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/tutorial/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tutorials/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/404/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/404/whoops/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/team/</loc>
+    <lastmod>2018-12-20T13:45:06+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/contact/contact/</loc>
+    <lastmod>2018-02-22T17:01:34+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/contact/</loc>
+    <lastmod>2018-02-22T17:01:34+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/post/2015-07-23-r-rmarkdown/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/plot/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/post/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/r-markdown/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/coffeeandcode/tags/regression/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+</urlset>

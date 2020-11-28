@@ -1,0 +1,11 @@
+output: 
+  blogdown::html_page:
+    highlight: tango
+    toc: false
+    number_sections: false
+    css: "/css/custom.css"
+    fig_caption: true
+    fig_retina: 2
+    mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/startup.js"
+    smart: true
+    
