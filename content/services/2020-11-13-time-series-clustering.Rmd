@@ -82,6 +82,8 @@ readr::write_lines(htmlhead, path = "../../themes/hugo-serif-theme/layouts/tutor
 
 # Life Expectancy in different countries
 
+This is the first sentence of the article.
+
 
 ```{r}
 library(ggplot2)
