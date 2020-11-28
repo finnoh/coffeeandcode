@@ -1,5 +1,5 @@
 theme = "hugo-serif-theme"
-baseURL = "https://finnoh.github.io/coffeeandcode/"
+baseURL = "https://coffee-and-code.netlify.app"
 #publishDir = "docs"
 languageCode = "en-us"
 title = "Share and connect."
