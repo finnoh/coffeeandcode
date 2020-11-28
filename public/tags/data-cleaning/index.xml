@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data cleaning on Share and connect.</title>
-    <link>/tags/data-cleaning/</link>
+    <link>https://coffee-and-code.netlify.app/tags/data-cleaning/</link>
     <description>Recent content in data cleaning on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-cleaning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://coffee-and-code.netlify.app/tags/data-cleaning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Join in! Merging Data Frames in R</title>
-      <link>/tutorials/join-in-merging-data-frames-in-r/</link>
+      <link>https://coffee-and-code.netlify.app/tutorials/join-in-merging-data-frames-in-r/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/join-in-merging-data-frames-in-r/</guid>
+      <guid>https://coffee-and-code.netlify.app/tutorials/join-in-merging-data-frames-in-r/</guid>
       <description>a.sourceLine { display: inline-block; line-height: 1.25; }a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }a.sourceLine:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }a.sourceLine { text-indent: -1em; padding-left: 1em; }}pre.</description>
     </item>
     

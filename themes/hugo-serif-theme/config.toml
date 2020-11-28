@@ -15,7 +15,7 @@ title = "Coffe and Code"
     show_call_box = true
 
   [params.logo]
-    mobile = "images/logo/logo-mobile.svg"
+    mobile = "images/logo/logo.svg"
     desktop = "images/logo/logo.svg"
     desktop_height = "140px"
     alt = "Coffee and Code"
@@ -26,7 +26,7 @@ title = "Coffe and Code"
     meta_og_type = "website"
     meta_og_url = "https://hugo-serif.netlify.app"
     meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-serif-theme/master/images/tn.png"
-    meta_og_description = "Serif is a modern business theme for Hugo. It contains content types for the archetypical business website. The theme is fully responsive, blazing fast and artfully illustrated."
+    meta_og_description = "Coffee and Code is the homebase for reading material for your coffee break and revolves around Data Science and Economics."
     meta_twitter_card = "summary"
     meta_twitter_site = "@zerostaticio"
     meta_twitter_creator = "@zerostaticio"

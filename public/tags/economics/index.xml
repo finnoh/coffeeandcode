@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>economics on Share and connect.</title>
-    <link>/tags/economics/</link>
+    <link>https://coffee-and-code.netlify.app/tags/economics/</link>
     <description>Recent content in economics on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/economics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://coffee-and-code.netlify.app/tags/economics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Life Expectancy - Time Series Clustering</title>
-      <link>/services/time-series-clustering/</link>
+      <link>https://coffee-and-code.netlify.app/services/time-series-clustering/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/services/time-series-clustering/</guid>
+      <guid>https://coffee-and-code.netlify.app/services/time-series-clustering/</guid>
       <description>Image by Alexas_Fotos from Pixabay
 Life Expectancy in different countriesThis is the first sentence of the article.
 Figure 1: Based on this image.</description>
