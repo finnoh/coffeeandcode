@@ -21,4 +21,4 @@ The content of external links e.g. to web pages of third parties, is with the op
 
 ## Copyright
 
-Our contents are subject to the Germany copyright law. Making use of, reproducing or processing works that fall under the copyright protection on our web pages require prior consent of the respective owner, except explicit permissons by law. Only for private use, personal reproductions are allowed. 
+Our contents are subject to the copyright law of Germany. Making use of, reproducing or processing works that fall under the copyright protection on our web pages require prior consent of the respective owner, except explicit permissons by law. Only for private use, personal reproductions are allowed. 
