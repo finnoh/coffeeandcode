@@ -1,0 +1,24 @@
+---
+title: "Imprint"
+summary: "The legal notice regarding this blog."
+---
+
+# Imprint
+## Contact
+
+> E-Mail: [finn.hoener@student.uni-tuebingen.de](mailto:finn.hoener@student.uni-tuebingen.de)
+
+*Further contact information upon request.*
+
+## Accountability
+### Content
+
+Eventhough the contents of our web-pages have been created carefully, we cannot guarantee their wholeness or quality. Furthermore, we are responsible for our own content on these web pages. We have a duty to remove or block the use of information under generally applicable laws, but please note that we are not obligated to supervise the transmitted or saved information of third parties, or investigate circumstances pointing to criminal activity. This obligation remains unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).
+
+### Links
+
+The content of external links e.g. to web pages of third parties, is with the operators of those linked pages. At the time of linking, no misdemenanours were apparent to us. If we learn about any legal violations, we will deleted the respective link straightaway. 
+
+## Copyright
+
+Our contents are subject to the Germany copyright law. Making use of, reproducing or processing works that fall under the copyright protection on our web pages require prior consent of the respective owner, except explicit permissons by law. Only for private use, personal reproductions are allowed. 

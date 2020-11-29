@@ -1,0 +1,33 @@
+{{ define "body_classes" }}page-default-single{{ end }}
+
+{{ define "main" }}
+
+<div class="intro">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-sm-8 vertical-container">
+        {{ .Content }}
+      </div>
+      {{ if .Params.my_image }}
+      <div class="col-sm-4">
+        <img
+          class="img-fluid"
+          src="{{ .Params.my_image | relURL }}" />
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if .Site.IsServer }}
+  <script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+  {{ else }}
+  <script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

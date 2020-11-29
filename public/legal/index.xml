@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Legals on Share and connect.</title>
+    <link>/legal/</link>
+    <description>Recent content in Legals on Share and connect.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/legal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imprint</title>
+      <link>/legal/legal_notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/legal/legal_notice/</guid>
+      <description>The legal notice regarding this blog, as required by german law.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/legal/privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/legal/privacy_policy/</guid>
+      <description>Information regarding the privacy policy.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,107 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Share and connect.</title>
-    <link>https://coffee-and-code.netlify.app/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Share and connect.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://coffee-and-code.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>advanced</title>
-      <link>https://coffee-and-code.netlify.app/tags/advanced/</link>
+      <link>/tags/advanced/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/advanced/</guid>
+      <guid>/tags/advanced/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clustering</title>
-      <link>https://coffee-and-code.netlify.app/tags/clustering/</link>
+      <link>/tags/clustering/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/clustering/</guid>
+      <guid>/tags/clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>economics</title>
-      <link>https://coffee-and-code.netlify.app/tags/economics/</link>
+      <link>/tags/economics/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/economics/</guid>
+      <guid>/tags/economics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>modelling</title>
-      <link>https://coffee-and-code.netlify.app/tags/modelling/</link>
+      <link>/tags/modelling/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/modelling/</guid>
+      <guid>/tags/modelling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>basic</title>
-      <link>https://coffee-and-code.netlify.app/tags/basic/</link>
+      <link>/tags/basic/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/basic/</guid>
+      <guid>/tags/basic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data cleaning</title>
-      <link>https://coffee-and-code.netlify.app/tags/data-cleaning/</link>
+      <link>/tags/data-cleaning/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/data-cleaning/</guid>
+      <guid>/tags/data-cleaning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tidyverse</title>
-      <link>https://coffee-and-code.netlify.app/tags/tidyverse/</link>
+      <link>/tags/tidyverse/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/tidyverse/</guid>
+      <guid>/tags/tidyverse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>https://coffee-and-code.netlify.app/tags/tutorial/</link>
+      <link>/tags/tutorial/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/tutorial/</guid>
+      <guid>/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>https://coffee-and-code.netlify.app/tags/plot/</link>
+      <link>/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/plot/</guid>
+      <guid>/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://coffee-and-code.netlify.app/tags/r-markdown/</link>
+      <link>/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/r-markdown/</guid>
+      <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://coffee-and-code.netlify.app/tags/regression/</link>
+      <link>/tags/regression/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://coffee-and-code.netlify.app/tags/regression/</guid>
+      <guid>/tags/regression/</guid>
       <description></description>
     </item>
     

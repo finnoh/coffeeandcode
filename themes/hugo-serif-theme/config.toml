@@ -21,7 +21,7 @@ title = "Coffe and Code"
     alt = "Coffee and Code"
 
   [params.homepage_meta_tags]
-    meta_description = "Serif is a modern business theme for Hugo. It contains content types for the archetypical business website. The theme is fully responsive, blazing fast and artfully illustrated."
+    meta_description = "Coffee and Code is the homebase for reading material for your coffee break and revolves around Data Science and Economics."
     meta_og_title = "Hugo Serif Theme"
     meta_og_type = "website"
     meta_og_url = "https://hugo-serif.netlify.app"
@@ -52,7 +52,12 @@ title = "Coffe and Code"
 
   # Footer Menu
 
-#  [[menu.footer]]
-#    name = "Contact"
-#    url = "/contact/"
-#    weight = 2
+[[menu.footer]]
+  name = "Imprint"
+  url = "/imprint/"
+  weight = 2
+
+[[menu.footer]] 
+  name = "Privacy"
+  url = "/privacy/"
+  weight = 3
