@@ -16,6 +16,8 @@ code_lang: "R"
 description: "How has the life expectancy developed over different countries?"
 weight: 100
 featured: yes
+bibliography: ts_clustering.bib
+nocite: '@*'
 ---
 
 <img src="/images/diff_nat.jpg">
@@ -80,11 +82,6 @@ readr::write_lines(htmlhead, path = "../../themes/hugo-serif-theme/layouts/tutor
 
 ```
 
-# Life Expectancy in different countries
-
-This is the first sentence of the article.
-
-
 ```{r}
 library(ggplot2)
 library(tidyr)
@@ -102,29 +99,27 @@ library(png)
 library(mapproj)
 ```
 
+# Life Expectancy in different countries
+
+In this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the [*WorldBank-API*](https://data.worldbank.org/). For starters, we will query the life-expectancy for men and women from all available countries.
 
 
-```{r}
+```{r, echo = FALSE}
 start_year = 1960
 end_year = 2010
 span_year = end_year - start_year + 1
 
 codes <- c("SP.POP.TOTL", "SP.DYN.LE00.MA.IN", "SP.DYN.LE00.FE.IN")
 data <- WDI(start = start_year, end = end_year, indicator = codes)
-
-
 ```
 
-
+In a next step, we calculate the average life-expectancy as: $$LE_{avg} = \frac{LE_{men} + LE_{women}}{2} $$. Note that this does not take different populations of men and women into account, they are weighted equally.
 
 ```{r}
 df <- data
 
 df <- df %>% rename(men = SP.DYN.LE00.MA.IN, women = SP.DYN.LE00.FE.IN)
 df$avg_le <- (df$men + df$women)/2
-
-# fig <- plot_ly(data = df, x = ~year, y = ~men, color = ~country, mode="lines",text = ~paste("Year: ", year, '$<br>LE:', men), visible="legendonly")
-# fig
 
 ```
 
@@ -139,9 +134,8 @@ df_sub <- df_sub %>% select(-country) %>% mutate_all( ~replace(., is.na(.), 0))
 
 
 
-```{r}
+```{r, results="asis"}
 set.seed(42)
-
 n_clust = 4
 result <- specClust(df_sub, centers = n_clust)
 
@@ -153,6 +147,8 @@ df_tab <- df_sub %>% select(cluster, country)
 df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>%  print()
 
 ```
+
+
 ```{r}
 # color palette for plots
 
@@ -170,6 +166,12 @@ scale_fill_cc <-
 
 ```
 
+## Clustering
+To cluster the time-series we use the spectral clustering. One nice property of this algorithm is, that even though we are dealing with unsupervised machine learning, we get a recommendation for the "optimal" number of clusters (in this case 11). However, we chose to experiment with 4 clusters, because it is easier to interpret.
+
+In the following, we aggregated the life expectancy on the four clusters we have established. The plot below shows the four time-series. Interestingly, three of those are only parallel shifts of one another. We interpreted them as "developed", "developing" and "least developed" countries. The fourth time-series appears to be something special, as it does not look similar to the other three series: For nearly the first half of the timeframe it is close to zero, which is hard to make sense of at first.
+
+To better understand these clusters, create a world-map, where we color the countries with respect to their assigned clusters.
 
 ```{r}
 df_plot <-
@@ -186,7 +188,7 @@ p1 + geom_line()  + theme_bw() + scale_color_cc + labs(color = "Cluster", x = "Y
 
 ```
 ```{r}
-df_sub$cluster <- df_sub$cluster %>% factor(labels = c("More developed", "Developed", "Less Developed", "???"))
+df_sub$cluster <- df_sub$cluster %>% factor(labels = c("Developed", "Developing", "Least Developed", "???"))
 ```
 
 
@@ -239,8 +241,11 @@ image1 <- rasterGrob(img1, interpolate=TRUE)
 ```
 
 
+Let's take a look at the countries contained in the clusters with the world map below and compare it to the UN's classifications of a countries development. Suprisingly, the overlap appears to be quite big. Especially the countries marked as "developed" are nearly identical in both plots.
 
+However, there are some differences with the "less developed countries", especially in africa, where some countries in central africa have been classified as "more developed" by the UN.
 
+One oddity of the clustering is, that greenland has been assigned its own cluster. This also explaines the "strange" curve in the plot above, that probably came into existence due to greenlands small population (ca. $60000$ people).
 
 ```{r, fig.cap="[Based on this image.](https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg)"}
 # 5
@@ -259,3 +264,8 @@ p_arrange <- grid.arrange(image1, p2, nrow = 2)
 p_arrange
 
 ```
+
+
+
+# References
+

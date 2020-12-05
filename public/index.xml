@@ -78,9 +78,9 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/services/time-series-clustering/</guid>
-      <description>Image by Alexas_Fotos from Pixabay
-Life Expectancy in different countriesThis is the first sentence of the article.
-Figure 1: Based on this image.</description>
+      <description>Image by Alexas_Fotos from Pixabay
+Life Expectancy in different countriesIn this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the WorldBank-API. For starters, we will query the life-expectancy for men and women from all available countries.
+In a next step, we calculate the average life-expectancy as: \[LE_{avg} = \frac{LE_{men} + LE_{women}}{2} \]. Note that this does not take different populations of men and women into account, they are weighted equally.</description>
     </item>
     
     <item>

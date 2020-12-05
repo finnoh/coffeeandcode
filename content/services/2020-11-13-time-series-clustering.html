@@ -16,6 +16,8 @@ code_lang: "R"
 description: "How has the life expectancy developed over different countries?"
 weight: 100
 featured: yes
+bibliography: ts_clustering.bib
+nocite: '@*'
 ---
 
 
@@ -24,12 +26,49 @@ featured: yes
 <p>Image by <a href="https://pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Alexas_Fotos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5106668">Pixabay</a></p>
 <div id="life-expectancy-in-different-countries" class="section level1">
 <h1>Life Expectancy in different countries</h1>
-<p>This is the first sentence of the article.</p>
+<p>In this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the <a href="https://data.worldbank.org/"><em>WorldBank-API</em></a>. For starters, we will query the life-expectancy for men and women from all available countries.</p>
+<p>In a next step, we calculate the average life-expectancy as: <span class="math display">\[LE_{avg} = \frac{LE_{men} + LE_{women}}{2} \]</span>. Note that this does not take different populations of men and women into account, they are weighted equally.</p>
+</div>
+<div id="a-tibble-28-x-2" class="section level1">
+<h1>A tibble: 28 x 2</h1>
+<p>cluster country<br />
+<int> <chr><br />
+1 4 Andorra<br />
+2 4 American Samoa<br />
+3 4 Bermuda<br />
+4 4 Curacao<br />
+5 4 Dominica<br />
+6 4 Faroe Islands<br />
+7 4 Gibraltar<br />
+8 4 Greenland<br />
+9 4 Isle of Man<br />
+10 4 St. Kitts and Nevis
+# … with 18 more rows</p>
+<div id="clustering" class="section level2">
+<h2>Clustering</h2>
+<p>To cluster the time-series we use the spectral clustering. One nice property of this algorithm is, that even though we are dealing with unsupervised machine learning, we get a recommendation for the “optimal” number of clusters (in this case 11). However, we chose to experiment with 4 clusters, because it is easier to interpret.</p>
+<p>In the following, we aggregated the life expectancy on the four clusters we have established. The plot below shows the four time-series. Interestingly, three of those are only parallel shifts of one another. We interpreted them as “developed”, “developing” and “least developed” countries. The fourth time-series appears to be something special, as it does not look similar to the other three series: For nearly the first half of the timeframe it is close to zero, which is hard to make sense of at first.</p>
+<p>To better understand these clusters, create a world-map, where we color the countries with respect to their assigned clusters.</p>
 <p><img src="/services/2020-11-13-time-series-clustering_files/figure-html/unnamed-chunk-8-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Let’s take a look at the countries contained in the clusters with the world map below and compare it to the UN’s classifications of a countries development. Suprisingly, the overlap appears to be quite big. Especially the countries marked as “developed” are nearly identical in both plots.</p>
+<p>However, there are some differences with the “less developed countries”, especially in africa, where some countries in central africa have been classified as “more developed” by the UN.</p>
+<p>One oddity of the clustering is, that greenland has been assigned its own cluster. This also explaines the “strange” curve in the plot above, that probably came into existence due to greenlands small population (ca. <span class="math inline">\(60000\)</span> people).</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
 <img src="/services/2020-11-13-time-series-clustering_files/figure-html/unnamed-chunk-12-1.png" alt="[Based on this image.](https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg)" width="100%" />
 <p class="caption">
 Figure 1: <a href="https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg">Based on this image.</a>
 </p>
+</div>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-wdi">
+<p>Bank, The World. n.d. “WDI - Home.” <a href="https://datatopics.worldbank.org/world-development-indicators/">https://datatopics.worldbank.org/world-development-indicators/</a>.</p>
+</div>
+<div id="ref-spectral">
+<p>Denver, CU. 2018. “Spectral Clustering - Cu Denver Optimization Student Wiki.” <a href="http://math.ucdenver.edu/~sborgwardt/wiki/index.php/Spectral_clustering">http://math.ucdenver.edu/~sborgwardt/wiki/index.php/Spectral_clustering</a>.</p>
+</div>
 </div>
 </div>

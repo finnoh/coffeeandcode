@@ -5,7 +5,7 @@ intro_image_hide_on_mobile: true
 title: Home
 ---
 
-# Coffee and Code
+# DS-Econ
 
-Kick back and relax, while enjoying a cup of coffee. We provide the right reading material for you.
-Whether it is a coding tutorial or an article out of data science, we got you covered!
+We provide coding tutorials and articles with a focus on data science in economics.
+Enjoy and feel free to reach out to us!

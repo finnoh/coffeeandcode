@@ -1,6 +1,6 @@
 baseURL = "https://finnoh.github.io/coffeeandcode/"
 languageCode = "en-us"
-title = "Coffe and Code"
+title = "Coding Proof Coffee"
 #publishDir = "docs"
 
 [params]
