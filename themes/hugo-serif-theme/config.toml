@@ -1,6 +1,6 @@
-baseURL = "https://www.econ-ds.com"
+baseURL = "https://ds-econ.netlify.app/"
 languageCode = "en-us"
-title = "Coding Proof Coffee"
+title = "DS-ECON"
 #publishDir = "docs"
 
 [params]

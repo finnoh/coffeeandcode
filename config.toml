@@ -1,5 +1,5 @@
 theme = "hugo-serif-theme"
-baseURL = "https://www.econ-ds.com"
+baseURL = "https://ds-econ.netlify.app/"
 #publishDir = "docs"
 languageCode = "en-us"
 title = "Share and connect."
