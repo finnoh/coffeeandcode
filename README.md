@@ -1,2 +1,2 @@
-# coffeeandcode
-Repository for the coffe and code blog. This repo is used to publish the website on GitHub Pages and for documentation.
+# ds-econ
+Repository for the ds-econ blog. This repo is used to publish the website on netlify and for documentation.
