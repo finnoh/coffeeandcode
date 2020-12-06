@@ -1,0 +1,150 @@
+---
+title: Join in! Merging Data Frames in R (Part 1)
+author: Finn
+date: '2020-11-09'
+slug: join-in-merging-data-frames-in-r
+categories:
+  - R
+tags:
+  - tutorial
+  - data cleaning
+  - basic
+  - tidyverse
+image: images/ny1.jpg
+image_credit:
+code_lang: "R"
+description: "Awesome R code here"
+weight: 100
+bibliography: join_tut.bib
+nocite: '@*'
+
+---
+
+<img style="width:100%;" id="image" src="/images/ny1.jpg">
+
+<span>Photo by <a href="https://unsplash.com/@csoref?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Colton Duke</a> on <a href="https://unsplash.com/s/photos/new-york?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(cache = F, echo = TRUE, eval = TRUE, warning = FALSE, error = FALSE)
+library(kableExtra)
+
+my_kable <- function(df, caption, label){
+  
+  num_cols <- ncol(df)
+  str_align <- rep("c", num_cols) %>% paste(collapse = "")
+  
+  
+  df %>% kbl(align = str_align, caption = caption, label = label) %>%  kable_material(c("responsive","condensed","hover"))
+}
+
+```
+
+
+```{r setup}
+library(tidyverse)
+
+```
+
+
+# Where are the HIMYM actors from?
+
+If you are a fan of the famous "How I Met your Mother" series, you know the main characters and some facts about their backgrounds and professions. You know that Ted is an architect and from the various jokes about Canada, you know that Robin is from well, Canada. But where are the actors of these characters from? To explore this question, we need to combine information from different data sources: data on the characters and data on the cast (see \@ref(tab:char)). Let us take a look at the ways in which we can bring the information together.
+
+```{r input_data}
+# generate some data
+
+d_characters <-
+  data.frame(
+    "Name" = c("Ted", "Marshall", "Lily", "Robin", "Barney", "Viktoria"),
+    "Job" = c(
+      "Architect",
+      "Lawyer",
+      "Teacher",
+      "News-Anchor",
+      "PLEASE",
+      "Pastry chef"
+    ),
+    "Year_of_Birth" = c(1978, 1978, 1978, 1980, 1976, 1980), "Origin" = c("Shaker Heights","St. Cloud","Brooklyn", "Vancouver", "Staten Island", NA)
+  )
+
+d_cast <-
+  data.frame(
+    "Name" = c(
+      "Josh Radnor",
+      "Bob Saget",
+      "Jason Segel",
+      "Alyson Hannigan",
+      "Cobie Smulders",
+      "Neil Patrick Harris",
+      "Cristin Millioti"
+    ),
+    "Role" = c("Ted", "Ted", "Marshall", "Lily", "Robin", "Barney", "Tracy"),
+    "Birthplace" = c(
+      "Ohio",
+      "Pennsylvania",
+      "California",
+      "Washington D.C.",
+      "British Columbia",
+      "New Mexico",
+      "New Jersey"
+    )
+  )
+```
+
+```{r cast, echo=FALSE}
+my_kable(d_cast, caption = "The main cast of HIMYM", label = "cast")
+my_kable(d_characters, caption = "The main characters of HIMYM", label = "char")
+```
+
+
+# Combining data sets
+
+We make use of `dplyr` join functions to bring two data tables together. A join works by using a "key" column, that uniquely identifies observations in one of the data sets. This key serves as a "puzzle piece" to bring the tables together. The key is the column that shows up in both data sources, in our case it is the information regarding the respective role (called `d_cast$Role` and `d_characters$Name$`). 
+
+## Making use of an Inner Join
+
+```{r, echo=FALSE}
+# read image files
+img1 <- png::readPNG('inner_join.png')
+
+# convert images to objects that gridExtra can handle
+image1 <- grid::rasterGrob(img1, interpolate=TRUE)
+gridExtra::grid.arrange(image1, nrow=1)
+```
+
+
+The first way how we can bring two tables together is by an inner join. Here, the resulting data frame consists of only the observations, whose key value shows up in both tables. We take a first approach below with the `inner_join()` function.
+
+
+```{r inner_joinA, message=TRUE}
+# use inner join to merge the two dataframes
+df <- inner_join(d_cast, d_characters)
+```
+
+```{r innerA, echo=FALSE, cache=T}
+my_kable(df, caption = "This empty dataframe is the result of the inner join - We got a problem ...", label = "innerA")
+```
+
+Oh oh, that does not look right - Why is the resulting data frame (see \@ref(tab:innerA)) empty? Take a look at the output message above: the `inner_join` function used the `Name` column as the key, because it is the only column that has the same *name* in both data frames. Here lies the mistake: While it is named the same, it does not contain the same information! `d_cast$Name` resembles the name of the actor and not the name of the fictional character (like `d_character$Name` does).
+
+Luckily, we can make use of the `by=...` argument in the `inner_join()` function to specify which columns we want to line up with each other. Often times, it makes sense to rename some columns after merging to not confuse them with others. We can see the result of the improved join in \@ref(tab:innerB): Nice! We got a matching of the five main characters, exactly what we have been looking for. Notice how there are two matches for the character Ted: One for his actor Josh Radnor and one for his narrator Bob Saget.
+
+
+```{r inner_joinB}
+# use inner join to merge the two dataframes
+df <- inner_join(d_cast, d_characters, by = c("Role" = "Name"))
+
+# rename the Birthplace column, so that we know it refers to the birthplace of the actor
+df <- df %>% rename(Birthplace_actor = Birthplace)
+```
+
+```{r innerB, echo=FALSE, cache=FALSE}
+my_kable(df, caption = "It looks much better now!", label = "innerB")
+```
+
+> In the upcoming parts of this series, we will take a look at other forms of joins for example left and right joins. 
+
+# References
+
+

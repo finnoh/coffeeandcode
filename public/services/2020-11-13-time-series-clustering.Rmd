@@ -101,7 +101,7 @@ library(mapproj)
 
 # Life Expectancy in different countries
 
-In this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the [*WorldBank-API*](https://data.worldbank.org/). For starters, we will query the life-expectancy for men and women from all available countries.
+In this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the [*WorldBank-API*](https://data.worldbank.org/). For starters, we will query the life-expectancy for men and women from all available countries. 
 
 
 ```{r, echo = FALSE}
@@ -169,7 +169,7 @@ scale_fill_cc <-
 ## Clustering
 To cluster the time-series we use the spectral clustering. One nice property of this algorithm is, that even though we are dealing with unsupervised machine learning, we get a recommendation for the "optimal" number of clusters (in this case 11). However, we chose to experiment with 4 clusters, because it is easier to interpret.
 
-In the following, we aggregated the life expectancy on the four clusters we have established. The plot below shows the four time-series. Interestingly, three of those are only parallel shifts of one another. We interpreted them as "developed", "developing" and "least developed" countries. The fourth time-series appears to be something special, as it does not look similar to the other three series: For nearly the first half of the timeframe it is close to zero, which is hard to make sense of at first.
+In the following, we aggregated the life expectancy on the four clusters we have established. The plot below shows the four time-series. Interestingly, three of those are only parallel shifts of one another. We interpreted them as "developed", "developing" and "least developed" countries. The fourth time-series appears to be something special, as it does not look similar to the other three series: For nearly the first half of the time frame it is close to zero, which is hard to make sense of at first.
 
 To better understand these clusters, create a world-map, where we color the countries with respect to their assigned clusters.
 
@@ -241,11 +241,11 @@ image1 <- rasterGrob(img1, interpolate=TRUE)
 ```
 
 
-Let's take a look at the countries contained in the clusters with the world map below and compare it to the UN's classifications of a countries development. Suprisingly, the overlap appears to be quite big. Especially the countries marked as "developed" are nearly identical in both plots.
+Let's take a look at the countries contained in the clusters with the world map below and compare it to the UN's classifications of a countries development. Surprisingly, the overlap appears to be quite big. Especially the countries marked as "developed" are nearly identical in both plots.
 
-However, there are some differences with the "less developed countries", especially in africa, where some countries in central africa have been classified as "more developed" by the UN.
+However, there are some differences with the "less developed countries", especially in Africa, where some countries in central Africa have been classified as "more developed" by the UN.
 
-One oddity of the clustering is, that greenland has been assigned its own cluster. This also explaines the "strange" curve in the plot above, that probably came into existence due to greenlands small population (ca. $60000$ people).
+One oddity of the clustering is, that Greenland has been assigned its own cluster. This also explains the "strange" curve in the plot above, that probably came into existence due to Greenlands small population (ca. $60000$ people).
 
 ```{r, fig.cap="[Based on this image.](https://en.wikipedia.org/wiki/File:Imf-advanced-un-least-developed-2008.svg)"}
 # 5
