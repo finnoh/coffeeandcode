@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag1, tag2, tag3 on Share and connect.</title>
+    <link>/tags/tag1-tag2-tag3/</link>
+    <description>Recent content in tag1, tag2, tag3 on Share and connect.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tag1-tag2-tag3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>my_title</title>
+      <link>/services/grandmaster/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/services/grandmaster/</guid>
+      <description>Top of the Iceberg One of the top communities for datascience is the online-community of kaggle.com. There are tutorials, discussions, datasets and online competitons on this website.
+The air gets thinner at the top  kaggle grandmasters  import json import pandas as pd import numpy as np import seaborn as sns import networkx as nx import matplotlib.pyplot as plt import matplotlib as mpl import matplotlib.colors import os We can make use of the kaggle module, it yields CLI commands that we can use to interact with kaggle via an API interface.</description>
+    </item>
+    
+  </channel>
+</rss>
