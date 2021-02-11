@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>iceberg - Share and connect.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.min.cc8fd2615e23bc28393e84dc3080ce2efbe4a05ec27e02eb8abde3f23315d521.css">
+  
+
+  
+
+</head>
+
+<body class='page page-services-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img height=140px alt="Coffee and Code" src="/images/logo/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/"><img alt="Coffee and Code" src="/images/logo/logo.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+    
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <h1 class="title">iceberg</h1>
+        <div class="content"><h1 id="top-of-the-iceberg">Top of the Iceberg</h1>
+<p>One of the top communities for datascience is the online-community of <a href="https://www.kaggle.com/">kaggle.com</a>. There are tutorials, discussions, datasets and online competitons on this website.</p>
+<h2 id="the-air-gets-thinner-at-the-top">The air gets thinner at the top</h2>
+<ul>
+<li>kaggle grandmasters</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> IPython.core.display <span style="color:#f92672">import</span> display, HTML, Markdown
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
+<span style="color:#f92672">import</span> networkx <span style="color:#f92672">as</span> nx
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> matplotlib <span style="color:#f92672">as</span> mpl
+<span style="color:#f92672">import</span> matplotlib.colors
+<span style="color:#f92672">import</span> os
+
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>max_columns <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>max_colwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
+</code></pre></div><p>We can make use of the <code>kaggle</code> <a href="https://github.com/Kaggle/kaggle-api">module</a>, it yields CLI commands that we can use to interact with kaggle via an API interface.
+This API makes it possible, to directly download datasets from within your script, like we did below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import kaggle</span>
+<span style="color:#75715e">#!kaggle datasets download kaggle/meta-kaggle</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># load the datasets</span>
+df_followers <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;./meta-kaggle/UserFollowers.csv&#39;</span>)
+df_users <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;./meta-kaggle/Users.csv&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># merge the user information to the user followings dataset</span>
+col_select <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Id&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;RegisterDate&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier&#39;</span>]
+
+tmp <span style="color:#f92672">=</span> df_followers<span style="color:#f92672">.</span>merge(df_users[col_select], left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;UserId&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
+df <span style="color:#f92672">=</span> tmp<span style="color:#f92672">.</span>merge(df_users[col_select], left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;FollowingUserId&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>, suffixes<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;_user&#39;</span>, <span style="color:#e6db74">&#39;_follower&#39;</span>))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># drop the Id and Id_y columns, they are duplicates of FollowingUserId &amp; UserId. Rename id_x to id as it identifies each edge uniquely</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Id&#39;</span>, <span style="color:#e6db74">&#39;Id_y&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Id_x&#39;</span>:<span style="color:#e6db74">&#39;Id&#39;</span>})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>UserId</th>
+      <th>...</th>
+      <th>RegisterDate_follower</th>
+      <th>PerformanceTier_follower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>64</td>
+      <td>368</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1995</td>
+      <td>1950</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>45</td>
+      <td>3258</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100734</td>
+      <td>3293</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>364728</td>
+      <td>3429</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>429164</td>
+      <td>5185</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>162929</td>
+      <td>5940</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10031</td>
+      <td>6388</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2465</td>
+      <td>16453</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7492</td>
+      <td>19971</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 10 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%%</span>capture
+<span style="color:#75715e"># how many performance tiers are there? The Tier No. 5 resembles Kaggle officials</span>
+df[<span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>]<span style="color:#f92672">.</span>unique()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>shape <span style="color:#75715e"># there are 550k+ connections</span>
+</code></pre></div><pre><code>(566020, 10)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%%</span>capture
+<span style="color:#75715e"># create an aggregated dataset of followers - top 5 kaggle users (most followers)</span>
+df_agg <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;DisplayName_follower&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>reset_index(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;counts&#39;</span>)
+<span style="color:#66d9ef">print</span>(df_agg<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;counts&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>to_markdown())
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_agg<span style="color:#f92672">.</span>shape
+</code></pre></div><pre><code>(88877, 2)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create a density of number of followers - hard smoothing of density!</span>
+g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>displot(df_agg[df_agg[<span style="color:#e6db74">&#39;counts&#39;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>], x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;counts&#34;</span>, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>, cut<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, bw_adjust<span style="color:#f92672">=</span><span style="color:#ae81ff">250</span>)
+
+g<span style="color:#f92672">.</span>fig<span style="color:#f92672">.</span>set_figwidth(<span style="color:#ae81ff">15</span>)
+g<span style="color:#f92672">.</span>fig<span style="color:#f92672">.</span>set_figheight(<span style="color:#ae81ff">7.5</span>)
+g<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Number of Followers&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Density&#39;</span>)
+</code></pre></div><pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1bf807e0700&gt;
+</code></pre>
+<p><img src="/images/output_13_2.png" alt="png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create an attribute dataframe</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_attr_df</span>(df):
+  <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  This function creates the attribute dataframe, that is used to color the nodes later on.
+</span><span style="color:#e6db74">  :param df: The dataframe from kaggle
+</span><span style="color:#e6db74">  :return: Returns the attribute dataframe
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+  tmp_user <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;UserId&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>]]
+  tmp_user <span style="color:#f92672">=</span> tmp_user<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;UserId&#39;</span>:<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>:<span style="color:#e6db74">&#39;tier&#39;</span>})
+
+  tmp_follower <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>]]
+  tmp_follower <span style="color:#f92672">=</span> tmp_follower<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>:<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>:<span style="color:#e6db74">&#39;tier&#39;</span>})
+
+  tmp <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([tmp_user, tmp_follower], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+  tmp <span style="color:#f92672">=</span> tmp<span style="color:#f92672">.</span>drop_duplicates()
+
+  <span style="color:#66d9ef">return</span> tmp
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get the most frequented grandmasters</span>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+top_list <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>]<span style="color:#f92672">.</span>value_counts()[:n]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>tolist()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create the graph</span>
+df_mini <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)]
+df_mini <span style="color:#f92672">=</span> df_mini[df_mini[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>]<span style="color:#f92672">.</span>isin(top_list)]
+
+df_mini <span style="color:#f92672">=</span> df_mini<span style="color:#f92672">.</span>sample(n<span style="color:#f92672">=</span><span style="color:#ae81ff">5000</span>)
+df_mini_att <span style="color:#f92672">=</span> create_attr_df(df_mini)
+
+G <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>from_pandas_edgelist(df<span style="color:#f92672">=</span>df_mini, source<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;UserId&#39;</span>, target<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;FollowingUserId&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mini<span style="color:#f92672">.</span>shape
+</code></pre></div><pre><code>(5000, 10)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node_attr <span style="color:#f92672">=</span> df_mini_att<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>)<span style="color:#f92672">.</span>to_dict(<span style="color:#e6db74">&#39;index&#39;</span>)
+nx<span style="color:#f92672">.</span>set_node_attributes(G, node_attr)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create custom colormap</span>
+cmap <span style="color:#f92672">=</span> mpl<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>ListedColormap([<span style="color:#e6db74">&#39;#4FCB93&#39;</span>, <span style="color:#e6db74">&#39;#20BEFF&#39;</span>,<span style="color:#e6db74">&#39;#96508E&#39;</span>, <span style="color:#e6db74">&#39;#F96562&#39;</span>, <span style="color:#e6db74">&#39;#DCA917&#39;</span>, <span style="color:#e6db74">&#39;#1B96C3&#39;</span>], N<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+boundaries <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+norm <span style="color:#f92672">=</span> mpl<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>BoundaryNorm(boundaries, cmap<span style="color:#f92672">.</span>N, clip<span style="color:#f92672">=</span>True)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#75715e"># create number for each group to allow use of colormap</span>
+<span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> count
+
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
+
+<span style="color:#75715e"># get unique groups</span>
+groups <span style="color:#f92672">=</span> set(nx<span style="color:#f92672">.</span>get_node_attributes(G,<span style="color:#e6db74">&#39;tier&#39;</span>)<span style="color:#f92672">.</span>values())
+mapping <span style="color:#f92672">=</span> dict(zip(sorted(groups), count()))
+nodes <span style="color:#f92672">=</span> G<span style="color:#f92672">.</span>nodes()
+colors <span style="color:#f92672">=</span> [mapping[G<span style="color:#f92672">.</span>nodes[n][<span style="color:#e6db74">&#39;tier&#39;</span>]] <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> nodes]
+
+<span style="color:#75715e"># drawing nodes and edges separately so we can capture collection for colobar</span>
+pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>spring_layout(G)
+pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>rescale_layout_dict(pos, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+
+ec <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>draw_networkx_edges(G, pos, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>)
+nc <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>draw_networkx_nodes(G, pos, nodelist<span style="color:#f92672">=</span>nodes, node_color<span style="color:#f92672">=</span>colors, node_size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, cmap<span style="color:#f92672">=</span>cmap)
+
+cbar <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>colorbar(nc, orientation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;horizontal&#39;</span>)
+cbar<span style="color:#f92672">.</span>set_ticks([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>])
+cbar<span style="color:#f92672">.</span>set_ticklabels([<span style="color:#e6db74">&#39;Novice&#39;</span>, <span style="color:#e6db74">&#39;Contributor&#39;</span>, <span style="color:#e6db74">&#39;Expert&#39;</span>, <span style="color:#e6db74">&#39;Master&#39;</span>, <span style="color:#e6db74">&#39;Grandmaster&#39;</span>])
+
+plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/output_20_0.png" alt="png"></p>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <h3 class="footer-title">Share and connect.</h3>
+          <ul>
+            
+            
+            <li class="menu-item-imprint">
+              <a href="/imprint/">
+                Imprint
+              </a>
+            </li>
+            
+            <li class="menu-item-privacy">
+              <a href="/privacy/">
+                Privacy
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            
+<div class="social">
+    
+        <a href="https://github.com/finnoh" target="blank"><img src="/images/social/github.svg" title="Github" alt="Github" /></a>
+    
+        <a href="https://zerostatic.io" target="blank"><img src="/images/social/github.svg" title="Hugo Serif Theme" alt="Hugo Serif Theme" /></a>
+    
+</div>
+
+          
+          
+            <div class="copyright">Blog by <a class="zerostatic" href="https://github.com/finnoh">Finn Hoener - 2020</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+
+
+
+
+  <script type="text/javascript" src="/js/services.min.96db5a4d9a7ea2d1759fd6847940367b5207c4ef5686df932179e04aefccdf37.js"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/scripts.min.bf1e1f7ae8e03db5f012356e825843facdff51c0a559cb0d27fe2bbe1db405c2.js"></script>
+  
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>

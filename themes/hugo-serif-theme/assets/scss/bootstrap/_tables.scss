@@ -3,16 +3,43 @@
 //
 
 .table {
-  width: 100%;
+  width: 50%;
   margin-bottom: $spacer;
   color: $table-color;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
   th,
   td {
+    width: 50%;
     padding: $table-cell-padding;
     vertical-align: top;
     border-top: $table-border-width solid $table-border-color;
+    overflow: hidden;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+.dataframe {
+  width: 50%;
+  margin-bottom: $spacer;
+  color: $table-color;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  th,
+  td {
+    width: 50%;
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+    overflow: hidden;
   }
 
   thead th {
@@ -26,11 +53,13 @@
 }
 
 
+
 //
 // Condensed table w/ half padding
 //
 
 .table-sm {
+  width: 50%;
   th,
   td {
     padding: $table-cell-padding-sm;
@@ -43,6 +72,7 @@
 // Add or remove borders all around the table and between all the columns.
 
 .table-bordered {
+  width: 50%;
   border: $table-border-width solid $table-border-color;
 
   th,
@@ -59,6 +89,7 @@
 }
 
 .table-borderless {
+  width: 50%;
   th,
   td,
   thead th,

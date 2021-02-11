@@ -1,0 +1,452 @@
+
+
+
+<div id="my-notebook-title" class="section level1">
+<h1>My notebook title</h1>
+<p>title: my_title
+Date: 2018-06-01<br />
+Author: firstname lastname<br />
+Categories: category1, category2<br />
+Tags: tag1, tag2, tag3<br />
+<!--eofm--></p>
+</div>
+<div id="top-of-the-iceberg" class="section level1">
+<h1>Top of the Iceberg</h1>
+<p>One of the top communities for datascience is the online-community of <a href="https://www.kaggle.com/">kaggle.com</a>. There are tutorials, discussions, datasets and online competitons on this website.</p>
+<div id="the-air-gets-thinner-at-the-top" class="section level2">
+<h2>The air gets thinner at the top</h2>
+<ul>
+<li>kaggle grandmasters</li>
+</ul>
+<pre class="python"><code>import json
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import networkx as nx
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import matplotlib.colors
+import os</code></pre>
+<p>We can make use of the <code>kaggle</code> <a href="https://github.com/Kaggle/kaggle-api">module</a>, it yields CLI commands that we can use to interact with kaggle via an API interface.
+This API makes it possible, to directly download datasets from within your script, like we did below.</p>
+<pre class="python"><code># import kaggle
+#!kaggle datasets download kaggle/meta-kaggle</code></pre>
+<pre class="python"><code># load the datasets
+df_followers = pd.read_csv(&#39;./meta-kaggle/UserFollowers.csv&#39;)
+df_users = pd.read_csv(&#39;./meta-kaggle/Users.csv&#39;)</code></pre>
+<pre class="python"><code># merge the user information to the user followings dataset
+col_select = [&#39;Id&#39;,&#39;DisplayName&#39;,&#39;RegisterDate&#39;, &#39;PerformanceTier&#39;] 
+
+tmp = df_followers.merge(df_users[col_select], left_on=&#39;UserId&#39;, right_on=&#39;Id&#39;)
+df = tmp.merge(df_users[col_select], left_on=&#39;FollowingUserId&#39;, right_on=&#39;Id&#39;, suffixes=(&#39;_user&#39;, &#39;_follower&#39;))</code></pre>
+<pre class="python"><code># drop the Id and Id_y columns, they are duplicates of FollowingUserId &amp; UserId. Rename id_x to id as it identifies each edge uniquely
+df = df.drop([&#39;Id&#39;, &#39;Id_y&#39;], axis=1)
+df = df.rename(columns={&#39;Id_x&#39;:&#39;Id&#39;})</code></pre>
+<pre class="python"><code># take a look at the dataset
+df.head()</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>
+</th>
+<th>
+Id
+</th>
+<th>
+UserId
+</th>
+<th>
+FollowingUserId
+</th>
+<th>
+CreationDate
+</th>
+<th>
+DisplayName_user
+</th>
+<th>
+RegisterDate_user
+</th>
+<th>
+PerformanceTier_user
+</th>
+<th>
+DisplayName_follower
+</th>
+<th>
+RegisterDate_follower
+</th>
+<th>
+PerformanceTier_follower
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+<td>
+64
+</td>
+<td>
+368
+</td>
+<td>
+993
+</td>
+<td>
+05/23/2017
+</td>
+<td>
+Anthony Goldbloom
+</td>
+<td>
+01/20/2010
+</td>
+<td>
+5
+</td>
+<td>
+Ben Hamner
+</td>
+<td>
+05/31/2010
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<th>
+1
+</th>
+<td>
+1995
+</td>
+<td>
+1950
+</td>
+<td>
+993
+</td>
+<td>
+05/30/2017
+</td>
+<td>
+Rowan
+</td>
+<td>
+07/27/2010
+</td>
+<td>
+1
+</td>
+<td>
+Ben Hamner
+</td>
+<td>
+05/31/2010
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<th>
+2
+</th>
+<td>
+45
+</td>
+<td>
+3258
+</td>
+<td>
+993
+</td>
+<td>
+05/22/2017
+</td>
+<td>
+Will Cukierski
+</td>
+<td>
+10/13/2010
+</td>
+<td>
+5
+</td>
+<td>
+Ben Hamner
+</td>
+<td>
+05/31/2010
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<th>
+3
+</th>
+<td>
+100734
+</td>
+<td>
+3293
+</td>
+<td>
+993
+</td>
+<td>
+06/02/2018
+</td>
+<td>
+biz man
+</td>
+<td>
+10/16/2010
+</td>
+<td>
+0
+</td>
+<td>
+Ben Hamner
+</td>
+<td>
+05/31/2010
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<th>
+4
+</th>
+<td>
+364728
+</td>
+<td>
+3429
+</td>
+<td>
+993
+</td>
+<td>
+12/06/2019
+</td>
+<td>
+Ro Bin
+</td>
+<td>
+11/01/2010
+</td>
+<td>
+2
+</td>
+<td>
+Ben Hamner
+</td>
+<td>
+05/31/2010
+</td>
+<td>
+5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="python"><code># how many performance tiers are there? The Tier No. 5 resembles Kaggle officials
+df[&#39;PerformanceTier_user&#39;].unique()</code></pre>
+<p>array([5, 1, 0, 2, 3, 4], dtype=int64)</p>
+<pre class="python"><code>df.shape # there are 550k+ connections</code></pre>
+<p>(566020, 10)</p>
+<pre class="python"><code># create an aggregated dataset of followers - top 5 kaggle users (most followers)
+df_agg = df.groupby(&#39;DisplayName_follower&#39;).size().reset_index(name=&#39;counts&#39;)
+df_agg.sort_values(&#39;counts&#39;, ascending=False).head(5)</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>
+</th>
+<th>
+DisplayName_follower
+</th>
+<th>
+counts
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+55847
+</th>
+<td>
+SRK
+</td>
+<td>
+11725
+</td>
+</tr>
+<tr>
+<th>
+74308
+</th>
+<td>
+bestfitting
+</td>
+<td>
+11333
+</td>
+</tr>
+<tr>
+<th>
+1437
+</th>
+<td>
+Abhishek Thakur
+</td>
+<td>
+9893
+</td>
+</tr>
+<tr>
+<th>
+23653
+</th>
+<td>
+Giba
+</td>
+<td>
+9031
+</td>
+</tr>
+<tr>
+<th>
+13903
+</th>
+<td>
+Chris Deotte
+</td>
+<td>
+6689
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="python"><code>df_agg.shape</code></pre>
+<p>(88877, 2)</p>
+<pre class="python"><code># create a density of number of followers - hard smoothing of density!
+g = sns.displot(df_agg[df_agg[&#39;counts&#39;]&gt;0], x=&quot;counts&quot;, kind=&#39;kde&#39;, cut=0, bw_adjust=250, ax=ax)
+
+g.fig.set_figwidth(15)
+g.fig.set_figheight(7.5)
+g.set(xlabel=&#39;Number of Followers&#39;, ylabel=&#39;Density&#39;)</code></pre>
+<p>C:3-packages.py:2164: UserWarning: <code>displot</code> is a figure-level function and does not accept the ax= paramter. You may wish to try kdeplot.
+warnings.warn(msg, UserWarning)</p>
+<p>&lt;seaborn.axisgrid.FacetGrid at 0x26170b1a9a0&gt;</p>
+<div class="figure">
+<img src="output_13_2.png" alt="" />
+<p class="caption">png</p>
+</div>
+<pre class="python"><code># create an attribute dataframe
+def create_attr_df(df):
+  &quot;&quot;&quot;
+  This function creates the attribute dataframe, that is used to color the nodes later on. 
+  :param df: The dataframe from kaggle
+  :return: Returns the attribute dataframe
+  &quot;&quot;&quot;
+  tmp_user = df[[&#39;UserId&#39;, &#39;PerformanceTier_user&#39;]]
+  tmp_user = tmp_user.rename(columns={&#39;UserId&#39;:&#39;id&#39;, &#39;PerformanceTier_user&#39;:&#39;tier&#39;})
+
+  tmp_follower = df[[&#39;FollowingUserId&#39;, &#39;PerformanceTier_follower&#39;]]
+  tmp_follower = tmp_follower.rename(columns={&#39;FollowingUserId&#39;:&#39;id&#39;, &#39;PerformanceTier_follower&#39;:&#39;tier&#39;})
+
+  tmp = pd.concat([tmp_user, tmp_follower], axis=0)
+  tmp = tmp.drop_duplicates()
+
+  return tmp</code></pre>
+<pre class="python"><code># get the most frequented grandmasters
+n = 100
+top_list = df[&#39;FollowingUserId&#39;].value_counts()[:n].index.tolist()</code></pre>
+<pre class="python"><code># create the graph
+df_mini = df[(df[&#39;PerformanceTier_follower&#39;] == 4)]
+df_mini = df_mini[df_mini[&#39;FollowingUserId&#39;].isin(top_list)]
+
+df_mini = df_mini.sample(n=5000)
+df_mini_att = create_attr_df(df_mini)
+
+G = nx.from_pandas_edgelist(df=df_mini, source=&#39;UserId&#39;, target=&#39;FollowingUserId&#39;)</code></pre>
+<pre class="python"><code>df_mini.shape</code></pre>
+<p>(5000, 10)</p>
+<pre class="python"><code>node_attr = df_mini_att.set_index(&#39;id&#39;).to_dict(&#39;index&#39;)
+nx.set_node_attributes(G, node_attr)</code></pre>
+<pre class="python"><code># create custom colormap
+cmap = mpl.colors.ListedColormap([&#39;#4FCB93&#39;, &#39;#20BEFF&#39;,&#39;#96508E&#39;, &#39;#F96562&#39;, &#39;#DCA917&#39;, &#39;#1B96C3&#39;], N=5)
+boundaries = [0, 1, 2, 3, 4]
+norm = mpl.colors.BoundaryNorm(boundaries, cmap.N, clip=True)</code></pre>
+<pre class="python"><code>import matplotlib.pyplot as plt
+# create number for each group to allow use of colormap
+from itertools import count
+
+plt.figure(figsize=(15,15))
+
+# get unique groups
+groups = set(nx.get_node_attributes(G,&#39;tier&#39;).values())
+mapping = dict(zip(sorted(groups), count()))
+nodes = G.nodes()
+colors = [mapping[G.nodes[n][&#39;tier&#39;]] for n in nodes]
+
+# drawing nodes and edges separately so we can capture collection for colobar
+pos = nx.spring_layout(G)
+pos = nx.rescale_layout_dict(pos, scale=0.5)
+
+ec = nx.draw_networkx_edges(G, pos, alpha=0.2)
+nc = nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color=colors, node_size=5, alpha=0.8, cmap=cmap)
+
+cbar = plt.colorbar(nc, orientation=&#39;horizontal&#39;)
+cbar.set_ticks([0,1,2,3,4])
+cbar.set_ticklabels([&#39;Novice&#39;, &#39;Contributor&#39;, &#39;Expert&#39;, &#39;Master&#39;, &#39;Grandmaster&#39;])
+
+plt.axis(&#39;off&#39;)
+plt.show()</code></pre>
+<div class="figure">
+<img src="output_20_0.png" alt="" />
+<p class="caption">png</p>
+</div>
+</div>
+</div>

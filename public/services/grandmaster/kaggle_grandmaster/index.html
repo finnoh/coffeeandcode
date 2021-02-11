@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>It&#39;s Exclusive at the Top - Share and connect.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.min.cc8fd2615e23bc28393e84dc3080ce2efbe4a05ec27e02eb8abde3f23315d521.css">
+  
+
+  
+
+</head>
+
+<body class='page page-services-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img height=140px alt="Coffee and Code" src="/images/logo/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/"><img alt="Coffee and Code" src="/images/logo/logo.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-articles">
+      <a href="/services/">
+        
+        <span>Articles</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tutorials">
+      <a href="/tutorials/">
+        
+        <span>Tutorials</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-contact">
+      <a href="/contact/contact/">
+        
+        <span>Contact</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+    
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <h1 class="title">It&#39;s Exclusive at the Top</h1>
+        <div class="content"><h1 id="what-is-kaggle">What is Kaggle?</h1>
+<p>One of the top communities for data science is the online-community of <a href="https://www.kaggle.com/">kaggle.com</a>. There are tutorials, discussions, datasets and online competitions on this website. Beyond that, kaggle is one of the most important tools of the open source data science community. Not only through the sharing of code and datasets, but mostly by crowdsourcing data science projects through competitions. Even top notch tech companies have leveraged the power of these competitions and reward participants with high prizes (at the time of writing, the highest being $100,000 offered by <a href="https://www.kaggle.com/c/jane-street-market-prediction">Jane Street Group</a>).</p>
+<h2 id="how-successful-is-a-user">How successful is a user?</h2>
+<p>To further motivate the participation in the publishing of code, creation of datasets and competitions, kaggle has established a ranking system for its community. The users can climb different ranks, by completing different requirements that get increasingly harder. At the moment, there are 5 different ranks - in increasing order:</p>
+<ol>
+<li>Novice</li>
+<li>Contributor</li>
+<li>Expert</li>
+<li>Master</li>
+<li>Grandmaster</li>
+</ol>
+<p>For more information on these ranks, visit kaggle&rsquo;s <a href="https://www.kaggle.com/progression">help-page</a></p>
+<h1 id="exploring-the-kaggle-community">Exploring the Kaggle Community</h1>
+<p>In an effort, to get a better idea of the data science community we use data published by kaggle itself about things going on in its user body. The data can be found here: <a href="https://www.kaggle.com/kaggle/meta-kaggle?select=Users.csv">Meta-Kaggle</a></p>
+<h2 id="number-of-followers">Number of Followers</h2>
+<p>Beyond its service to the data science community, kaggle also provided meta-data about what is going on its website. Hence, everybody can access and explore what is going on!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> IPython.core.display <span style="color:#f92672">import</span> display, HTML, Markdown
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
+<span style="color:#f92672">import</span> networkx <span style="color:#f92672">as</span> nx
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> matplotlib <span style="color:#f92672">as</span> mpl
+<span style="color:#f92672">import</span> matplotlib.colors
+<span style="color:#f92672">import</span> os
+
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>max_columns <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>max_colwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
+</code></pre></div><p>We can make use of the <code>kaggle</code> <a href="https://github.com/Kaggle/kaggle-api">module</a>, it yields CLI commands that we can use to interact with kaggle via an API interface.
+This API makes it possible, to directly download datasets from within your script, like we did below. The CLI commands are commented out below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#import kaggle</span>
+<span style="color:#75715e">#!kaggle datasets download kaggle/meta-kaggle</span>
+</code></pre></div><p>Next we load in the data about kaggle&rsquo;s users and their followers and wrangle with it. The goal is to get a nice dataframe of followers and users. We won&rsquo;t discuss the datastructure here, so feel free to check out the data yourself (see link above).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># load the datasets</span>
+df_followers <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;./meta-kaggle/UserFollowers.csv&#39;</span>)
+df_users <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;./meta-kaggle/Users.csv&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># merge the user information to the user followings dataset</span>
+col_select <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Id&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;RegisterDate&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier&#39;</span>] 
+
+tmp <span style="color:#f92672">=</span> df_followers<span style="color:#f92672">.</span>merge(df_users[col_select], left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;UserId&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
+df <span style="color:#f92672">=</span> tmp<span style="color:#f92672">.</span>merge(df_users[col_select], left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;FollowingUserId&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>, suffixes<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;_user&#39;</span>, <span style="color:#e6db74">&#39;_follower&#39;</span>))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># drop the Id and Id_y columns, they are duplicates of FollowingUserId &amp; UserId. Rename id_x to id as it identifies each edge uniquely</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Id&#39;</span>, <span style="color:#e6db74">&#39;Id_y&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Id_x&#39;</span>:<span style="color:#e6db74">&#39;Id&#39;</span>})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>columns <span style="color:#75715e"># which columns are there?</span>
+</code></pre></div><pre><code>Index(['Id', 'UserId', 'FollowingUserId', 'CreationDate', 'DisplayName_user',
+       'RegisterDate_user', 'PerformanceTier_user', 'DisplayName_follower',
+       'RegisterDate_follower', 'PerformanceTier_follower'],
+      dtype='object')
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>) <span style="color:#75715e"># take a view at the dataset</span>
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>UserId</th>
+      <th>...</th>
+      <th>RegisterDate_follower</th>
+      <th>PerformanceTier_follower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>64</td>
+      <td>368</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1995</td>
+      <td>1950</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>45</td>
+      <td>3258</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100734</td>
+      <td>3293</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>364728</td>
+      <td>3429</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>429164</td>
+      <td>5185</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>162929</td>
+      <td>5940</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10031</td>
+      <td>6388</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2465</td>
+      <td>16453</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7492</td>
+      <td>19971</td>
+      <td>...</td>
+      <td>05/31/2010</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 10 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%%</span>capture
+<span style="color:#75715e"># how many performance tiers are there? The Tier No. 5 resembles Kaggle officials</span>
+df[<span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>]<span style="color:#f92672">.</span>unique()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>shape <span style="color:#75715e"># there are 550k+ connections</span>
+</code></pre></div><pre><code>(566020, 10)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%%</span>capture
+<span style="color:#75715e"># create an aggregated dataset of followers - top 5 kaggle users (most followers)</span>
+df_agg <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;DisplayName_follower&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>reset_index(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;counts&#39;</span>)
+<span style="color:#66d9ef">print</span>(df_agg<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;counts&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>to_markdown())
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_agg<span style="color:#f92672">.</span>shape <span style="color:#75715e"># the 5 most followed kaggle users are contained in here</span>
+</code></pre></div><pre><code>(88877, 2)
+</code></pre>
+<p>Interestingly, we see that the 5 most followed kaggle users account for nearly 90,000 out of 550,000 links between users (connections), which is around every sixth connection! 
+This leads us to further explore the number of followers each user has. For that purpose we created a density plot below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create a density of number of followers - hard smoothing of density!</span>
+g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>displot(df_agg[df_agg[<span style="color:#e6db74">&#39;counts&#39;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>], x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;counts&#34;</span>, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>, cut<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, bw_adjust<span style="color:#f92672">=</span><span style="color:#ae81ff">250</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#935F63&#39;</span>)
+
+g<span style="color:#f92672">.</span>fig<span style="color:#f92672">.</span>set_figwidth(<span style="color:#ae81ff">15</span>)
+g<span style="color:#f92672">.</span>fig<span style="color:#f92672">.</span>set_figheight(<span style="color:#ae81ff">7.5</span>)
+g<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Number of Followers&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Density&#39;</span>, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Distribution of Number of Followers&#39;</span>)
+</code></pre></div><pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x16906b16dc0&gt;
+</code></pre>
+<p><img src="/images/grandmaster_17_1.png" alt="png"></p>
+<p>As expected, the distribution is skewed to the right - there are many users with only a few users, but only a few users with many followers. It gets harder to &ldquo;get to the top&rdquo;, there are fewer people there!</p>
+<h2 id="kaggle-ranks-of-users">Kaggle Ranks of Users</h2>
+<p>Besides the number of followers, we are also interested in the different kaggle ranks. How many novice users are there? And how rare is it to be a grandmaster? To get an idea, we plotted the number of users for each tier below in a barplot. As expected, we again see a funnel towards the more exclusive tiers. This makes sense, it is very difficult to reach the grandmaster level and only a few people have the ability and motivation to do so.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_rank <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>])<span style="color:#f92672">.</span>agg([<span style="color:#e6db74">&#39;count&#39;</span>]) <span style="color:#75715e"># count the number of users per kaggle tier</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_rank<span style="color:#f92672">.</span>reset_index(inplace<span style="color:#f92672">=</span>True) <span style="color:#75715e"># move the index to its own column</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_rank[<span style="color:#e6db74">&#39;kaggle_tier&#39;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Novice&#39;</span>, <span style="color:#e6db74">&#39;Contributor&#39;</span>, <span style="color:#e6db74">&#39;Expert&#39;</span>, <span style="color:#e6db74">&#39;Master&#39;</span>, <span style="color:#e6db74">&#39;Grandmaster&#39;</span>, <span style="color:#e6db74">&#39;Kaggle&#39;</span>] <span style="color:#75715e"># add labels</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create barplot for the quantities</span>
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">7.5</span>))
+
+g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>df_rank[<span style="color:#e6db74">&#39;kaggle_tier&#39;</span>], y<span style="color:#f92672">=</span>df_rank<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">2</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#935F63&#39;</span>)
+g<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Kaggle Tier&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Number of Users&#39;</span>, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Users per Kaggle Tier&#39;</span>)
+</code></pre></div><pre><code>[Text(0.5, 0, 'Kaggle Tier'),
+ Text(0, 0.5, 'Number of Users'),
+ Text(0.5, 1.0, 'Users per Kaggle Tier')]
+</code></pre>
+<p><img src="/images/grandmaster_24_1.png" alt="png"></p>
+<h2 id="social-network-at-the-top">Social Network at the Top</h2>
+<p>Now that we have looked at the quantities of followers and the number of users in the different tiers, we can go a step further and think about the connections between these users. Who is following grandmasters? Are they following each other, like an exclusive circle? First we will need to prepare the data a bit, but later on we create a graph showing a fraction of the network of the 100 most followed kaggle grandmasters.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create an attribute dataframe</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_attr_df</span>(df):
+  <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  This function creates the attribute dataframe, that is used to color the nodes later on. 
+</span><span style="color:#e6db74">  :param df: The dataframe from kaggle
+</span><span style="color:#e6db74">  :return: Returns the attribute dataframe
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+  tmp_user <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;UserId&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>]]
+  tmp_user <span style="color:#f92672">=</span> tmp_user<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;UserId&#39;</span>:<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_user&#39;</span>:<span style="color:#e6db74">&#39;tier&#39;</span>})
+
+  tmp_follower <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>]]
+  tmp_follower <span style="color:#f92672">=</span> tmp_follower<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>:<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>:<span style="color:#e6db74">&#39;tier&#39;</span>})
+
+  tmp <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([tmp_user, tmp_follower], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+  tmp <span style="color:#f92672">=</span> tmp<span style="color:#f92672">.</span>drop_duplicates()
+
+  <span style="color:#66d9ef">return</span> tmp
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get the most frequented grandmasters</span>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+top_list <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>]<span style="color:#f92672">.</span>value_counts()[:n]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>tolist()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># subset the dataframe to all grandmasters</span>
+df_mini <span style="color:#f92672">=</span> df[(df[<span style="color:#e6db74">&#39;PerformanceTier_follower&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)]
+df_mini <span style="color:#f92672">=</span> df_mini[df_mini[<span style="color:#e6db74">&#39;FollowingUserId&#39;</span>]<span style="color:#f92672">.</span>isin(top_list)]
+
+<span style="color:#75715e"># take a sample, to improve computation time</span>
+df_mini <span style="color:#f92672">=</span> df_mini<span style="color:#f92672">.</span>sample(n<span style="color:#f92672">=</span><span style="color:#ae81ff">5000</span>)
+
+<span style="color:#75715e"># create the attribute dataframe</span>
+df_mini_att <span style="color:#f92672">=</span> create_attr_df(df_mini)
+
+<span style="color:#75715e"># create the grpah object</span>
+G <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>from_pandas_edgelist(df<span style="color:#f92672">=</span>df_mini, source<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;UserId&#39;</span>, target<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;FollowingUserId&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># assign the attributes to the graph</span>
+node_attr <span style="color:#f92672">=</span> df_mini_att<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>)<span style="color:#f92672">.</span>to_dict(<span style="color:#e6db74">&#39;index&#39;</span>)
+nx<span style="color:#f92672">.</span>set_node_attributes(G, node_attr)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create custom colormap - color according to ranks colors on kaggle</span>
+cmap <span style="color:#f92672">=</span> mpl<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>ListedColormap([<span style="color:#e6db74">&#39;#4FCB93&#39;</span>, <span style="color:#e6db74">&#39;#20BEFF&#39;</span>,<span style="color:#e6db74">&#39;#96508E&#39;</span>, <span style="color:#e6db74">&#39;#F96562&#39;</span>, <span style="color:#e6db74">&#39;#DCA917&#39;</span>, <span style="color:#e6db74">&#39;#1B96C3&#39;</span>], N<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+boundaries <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+norm <span style="color:#f92672">=</span> mpl<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>BoundaryNorm(boundaries, cmap<span style="color:#f92672">.</span>N, clip<span style="color:#f92672">=</span>True)
+</code></pre></div><p>Finally, we can plot the graph in the appropriate colors. Note that the graph shows 100 grandmasters and a sample of their followers. Interestingly, there seem to be some grandmasters that follow a non or a few other grandmasters (outer part of the graph), while some of these users seem fairly interconnected with different other accounts (center of the graph). Also, it is apparent that most of the followers seem to be novices and contributors (blue and green colors in the clusters).</p>
+<p>Furthermore, in between the different clusters at the center of the graph, it looks like a good share of the points connecting multiple clusters are more on the purple and red side. This could hint at expert and master users following multiple of the most popular grandmasters, hence establishing edges between them. In fact, this would make sense as these users are probably more involved in the community and might have established &ldquo;real connections&rdquo; to some of the high profile users, while lower tier users might just be &ldquo;followers&rdquo; of these grandmaster accounts.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#75715e"># create number for each group to allow use of colormap</span>
+<span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> count
+
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
+
+<span style="color:#75715e"># get unique groups</span>
+groups <span style="color:#f92672">=</span> set(nx<span style="color:#f92672">.</span>get_node_attributes(G,<span style="color:#e6db74">&#39;tier&#39;</span>)<span style="color:#f92672">.</span>values())
+mapping <span style="color:#f92672">=</span> dict(zip(sorted(groups), count()))
+
+<span style="color:#75715e"># get nodes and color them</span>
+nodes <span style="color:#f92672">=</span> G<span style="color:#f92672">.</span>nodes()
+colors <span style="color:#f92672">=</span> [mapping[G<span style="color:#f92672">.</span>nodes[n][<span style="color:#e6db74">&#39;tier&#39;</span>]] <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> nodes]
+
+<span style="color:#75715e"># drawing nodes and edges separately so we can capture collection for colobar</span>
+pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>spring_layout(G)
+pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>rescale_layout_dict(pos, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+
+<span style="color:#75715e"># draw edges and nodes with color</span>
+ec <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>draw_networkx_edges(G, pos, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>)
+nc <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>draw_networkx_nodes(G, pos, nodelist<span style="color:#f92672">=</span>nodes, node_color<span style="color:#f92672">=</span>colors, node_size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, cmap<span style="color:#f92672">=</span>cmap)
+
+<span style="color:#75715e"># insert colorbar</span>
+cbar <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>colorbar(nc, orientation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;horizontal&#39;</span>)
+cbar<span style="color:#f92672">.</span>set_ticks([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>])
+cbar<span style="color:#f92672">.</span>set_ticklabels([<span style="color:#e6db74">&#39;Novice&#39;</span>, <span style="color:#e6db74">&#39;Contributor&#39;</span>, <span style="color:#e6db74">&#39;Expert&#39;</span>, <span style="color:#e6db74">&#39;Master&#39;</span>, <span style="color:#e6db74">&#39;Grandmaster&#39;</span>])
+
+plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/grandmaster_33_0.png" alt="png"></p>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <h3 class="footer-title">Share and connect.</h3>
+          <ul>
+            
+            
+            <li class="menu-item-imprint">
+              <a href="/imprint/">
+                Imprint
+              </a>
+            </li>
+            
+            <li class="menu-item-privacy">
+              <a href="/privacy/">
+                Privacy
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            
+<div class="social">
+    
+        <a href="https://github.com/finnoh" target="blank"><img src="/images/social/github.svg" title="Github" alt="Github" /></a>
+    
+        <a href="https://zerostatic.io" target="blank"><img src="/images/social/github.svg" title="Hugo Serif Theme" alt="Hugo Serif Theme" /></a>
+    
+</div>
+
+          
+          
+            <div class="copyright">Blog by <a class="zerostatic" href="https://github.com/finnoh">Finn Hoener - 2020</a></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+
+
+
+
+  <script type="text/javascript" src="/js/services.min.96db5a4d9a7ea2d1759fd6847940367b5207c4ef5686df932179e04aefccdf37.js"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/scripts.min.bf1e1f7ae8e03db5f012356e825843facdff51c0a559cb0d27fe2bbe1db405c2.js"></script>
+  
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>
