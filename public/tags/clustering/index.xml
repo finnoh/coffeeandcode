@@ -18,15 +18,5 @@ Life Expectancy in different countriesIn this article, we want to take a look a
 In a next step, we calculate the average life-expectancy as: \[LE_{avg} = \frac{LE_{men} + LE_{women}}{2} \]. Note that this does not take different populations of men and women into account, they are weighted equally.</description>
     </item>
     
-    <item>
-      <title>Life Expectancy - Time Series Clustering</title>
-      <link>/services/time-series-clustering/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/services/time-series-clustering/</guid>
-      <description>Top of the IcebergOne of the top communities for datascience is the online-community of kaggle.com. There are tutorials, discussions, datasets and online competitons on this website.
-The air gets thinner at the topkaggle grandmastersimport jsonimport pandas as pdimport numpy as npimport seaborn as snsimport networkx as nximport matplotlib.pyplot as pltimport matplotlib as mplimport matplotlib.colorsimport osWe can make use of the kaggle module, it yields CLI commands that we can use to interact with kaggle via an API interface.</description>
-    </item>
-    
   </channel>
 </rss>

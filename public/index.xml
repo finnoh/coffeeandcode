@@ -84,22 +84,21 @@ In a next step, we calculate the average life-expectancy as: \[LE_{avg} = \frac{
     </item>
     
     <item>
-      <title>Life Expectancy - Time Series Clustering</title>
-      <link>/services/time-series-clustering/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/services/time-series-clustering/</guid>
-      <description>Top of the IcebergOne of the top communities for datascience is the online-community of kaggle.com. There are tutorials, discussions, datasets and online competitons on this website.
-The air gets thinner at the topkaggle grandmastersimport jsonimport pandas as pdimport numpy as npimport seaborn as snsimport networkx as nximport matplotlib.pyplot as pltimport matplotlib as mplimport matplotlib.colorsimport osWe can make use of the kaggle module, it yields CLI commands that we can use to interact with kaggle via an API interface.</description>
-    </item>
-    
-    <item>
       <title>Join in! Merging Data Frames in R (Part 1)</title>
       <link>/tutorials/join-in-merging-data-frames-in-r/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/join-in-merging-data-frames-in-r/</guid>
       <description>code.sourceCode  span { display: inline-block; line-height: 1.25; }code.sourceCode  span { color: inherit; text-decoration: inherit; }code.sourceCode  span:empty { height: 1.2em; }.sourceCode { overflow: visible; }code.sourceCode { white-space: pre; position: relative; }div.sourceCode { margin: 1em 0; }pre.sourceCode { margin: 0; }@media screen {div.sourceCode { overflow: auto; }}@media print {code.sourceCode { white-space: pre-wrap; }code.sourceCode  span { text-indent: -5em; padding-left: 5em; }}pre.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s Exclusive at the Top</title>
+      <link>/services/grandmaster/kaggle_grandmaster/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/services/grandmaster/kaggle_grandmaster/</guid>
+      <description>What is Kaggle? One of the top communities for data science is the online-community of kaggle.com. There are tutorials, discussions, datasets and online competitions on this website. Beyond that, kaggle is one of the most important tools of the open source data science community. Not only through the sharing of code and datasets, but mostly by crowdsourcing data science projects through competitions. Even top notch tech companies have leveraged the power of these competitions and reward participants with high prizes (at the time of writing, the highest being $100,000 offered by Jane Street Group).</description>
     </item>
     
     <item>
@@ -130,15 +129,6 @@ As part of my bachelors thesis, I have analyzed the Hot Hand phenomenon in NCAA 
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/services/grandmaster/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/services/grandmaster/</guid>
-      <description></description>
     </item>
     
     <item>

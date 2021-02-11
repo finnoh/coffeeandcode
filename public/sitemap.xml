@@ -43,13 +43,13 @@
   </url>
   
   <url>
-    <loc>/services/time-series-clustering/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+    <loc>/tutorials/join-in-merging-data-frames-in-r/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/join-in-merging-data-frames-in-r/</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+    <loc>/services/grandmaster/kaggle_grandmaster/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -133,6 +133,31 @@
   </url>
   
   <url>
+    <loc>/tags/graph/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/network/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/networkx/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/seaborn/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/team/</loc>
     <lastmod>2018-12-20T13:45:06+10:00</lastmod>
   </url>
@@ -170,10 +195,6 @@
   <url>
     <loc>/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/services/grandmaster/</loc>
   </url>
   
   <url>

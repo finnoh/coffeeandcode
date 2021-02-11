@@ -19,16 +19,6 @@ In a next step, we calculate the average life-expectancy as: \[LE_{avg} = \frac{
     </item>
     
     <item>
-      <title>Life Expectancy - Time Series Clustering</title>
-      <link>/services/time-series-clustering/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/services/time-series-clustering/</guid>
-      <description>Top of the IcebergOne of the top communities for datascience is the online-community of kaggle.com. There are tutorials, discussions, datasets and online competitons on this website.
-The air gets thinner at the topkaggle grandmastersimport jsonimport pandas as pdimport numpy as npimport seaborn as snsimport networkx as nximport matplotlib.pyplot as pltimport matplotlib as mplimport matplotlib.colorsimport osWe can make use of the kaggle module, it yields CLI commands that we can use to interact with kaggle via an API interface.</description>
-    </item>
-    
-    <item>
       <title>Join in! Merging Data Frames in R (Part 1)</title>
       <link>/tutorials/join-in-merging-data-frames-in-r/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
