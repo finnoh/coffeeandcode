@@ -11,7 +11,7 @@ tags:
   - advanced
   - seaborn
   - networkx
-image: images/kaggle_logo.png
+image: images/diff_nat.jpg
 image_credit: "Databuff, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons"
 code_lang: "Python"
 description: "The top of kaggle is crowded, and interconnected."
