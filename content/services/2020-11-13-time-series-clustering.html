@@ -14,12 +14,14 @@ image: images/diff_nat.jpg
 image_credit:
 code_lang: "R"
 description: "How has the life expectancy developed over different countries?"
-weight: 100
+weight: 200
 featured: yes
 bibliography: ts_clustering.bib
 nocite: '@*'
 ---
 
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
 
 
 <p><img src="/images/diff_nat.jpg"></p>
@@ -28,22 +30,160 @@ nocite: '@*'
 <h1>Life Expectancy in different countries</h1>
 <p>In this article, we want to take a look at time-series clustering. Great time-series data can be acquired with the <a href="https://data.worldbank.org/"><em>WorldBank-API</em></a>. For starters, we will query the life-expectancy for men and women from all available countries.</p>
 <p>In a next step, we calculate the average life-expectancy as: <span class="math display">\[LE_{avg} = \frac{LE_{men} + LE_{women}}{2} \]</span>. Note that this does not take different populations of men and women into account, they are weighted equally.</p>
-</div>
-<div id="a-tibble-28-x-2" class="section level1">
-<h1>A tibble: 28 x 2</h1>
-<p>cluster country<br />
-<int> <chr><br />
-1 4 Andorra<br />
-2 4 American Samoa<br />
-3 4 Bermuda<br />
-4 4 Curacao<br />
-5 4 Dominica<br />
-6 4 Faroe Islands<br />
-7 4 Gibraltar<br />
-8 4 Greenland<br />
-9 4 Isle of Man<br />
-10 4 St. Kitts and Nevis
-# … with 18 more rows</p>
+<table class=" lightable-material lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+(#tab:tab_country)Overview of the countries in cluster 4.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+country
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Andorra
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+American Samoa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Bermuda
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Curacao
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Dominica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Faroe Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Gibraltar
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Greenland
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Isle of Man
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Kitts and Nevis
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Cayman Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Liechtenstein
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Monaco
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Martin (French part)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Marshall Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Northern Mariana Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Nauru
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+West Bank and Gaza
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Palau
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Serbia
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Seychelles
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+San Marino
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Sint Maarten (Dutch part)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Turks and Caicos Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Tuvalu
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+British Virgin Islands
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Kosovo
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Not classified
+</td>
+</tr>
+</tbody>
+</table>
 <div id="clustering" class="section level2">
 <h2>Clustering</h2>
 <p>To cluster the time-series we use the spectral clustering. One nice property of this algorithm is, that even though we are dealing with unsupervised machine learning, we get a recommendation for the “optimal” number of clusters (in this case 11). However, we chose to experiment with 4 clusters, because it is easier to interpret.</p>

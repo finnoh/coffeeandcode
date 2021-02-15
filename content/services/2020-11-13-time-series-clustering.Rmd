@@ -14,7 +14,7 @@ image: images/diff_nat.jpg
 image_credit:
 code_lang: "R"
 description: "How has the life expectancy developed over different countries?"
-weight: 100
+weight: 200
 featured: yes
 bibliography: ts_clustering.bib
 nocite: '@*'
@@ -144,8 +144,9 @@ df_sub$country <- country_vec
 df_sub <- df_sub %>% pivot_longer(cols = c(-cluster, -country))
 
 df_tab <- df_sub %>% select(cluster, country) 
-df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>%  print()
+tmp <- df_tab %>% dplyr::distinct() %>% dplyr::filter(cluster == 4) %>% select(country)
 
+my_kable(df = tmp, caption = "Overview of the countries in cluster 4.", label = "tab_country")
 ```
 
 

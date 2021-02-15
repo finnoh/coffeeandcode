@@ -38,11 +38,6 @@
   </url>
   
   <url>
-    <loc>/services/time-series-clustering/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/join-in-merging-data-frames-in-r/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
@@ -50,6 +45,11 @@
   <url>
     <loc>/services/grandmaster/kaggle_grandmaster/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/time-series-clustering/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
