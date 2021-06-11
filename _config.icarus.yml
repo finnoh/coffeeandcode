@@ -325,8 +325,8 @@ plugins:
     # Google Analytics plugin settings
     # https://analytics.google.com
     google_analytics:
-        # Google Analytics tracking ID
-        tracking_id: G-FEHK40T3GG
+        # Google Analytics tracking ID G-FEHK40T3GG
+        tracking_id:
     # Hotjar user feedback plugin
     # https://www.hotjar.com/
     hotjar:
