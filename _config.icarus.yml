@@ -6,8 +6,8 @@ variant: default
 logo:
 # Page metadata configurations
 head:
-    # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    # URL or path to the website's icon #/img/favicon.svg
+    favicon: /images/favicon.png
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -17,7 +17,7 @@ head:
         # when there is not enough space to display full name
         short_name: DSE
         # The start URL of the web application
-        start_url:
+        start_url: https://www.ds-econ.com/
         # The default theme color for the application
         theme_color:
         # A placeholder background color for the application page to display
@@ -305,7 +305,7 @@ plugins:
         # Whether the popup should stay static regardless of the page scrolls
         static: false
         # Where on the screen the consent popup should display
-        position: center
+        position: top-left
         # URL to your site's cookie policy
         policyLink: 'https://www.cookiesandyou.com/'
     # Enable the lightGallery and Justified Gallery plugins
@@ -325,7 +325,7 @@ plugins:
     katex: false
     # Enable the MathJax math typesetting support
     # https://www.mathjax.org/
-    mathjax: false
+    mathjax: true
     # Enable the Outdated Browser plugin
     # http://outdatedbrowser.com/
     outdated_browser: false
