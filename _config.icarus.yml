@@ -110,6 +110,7 @@ navbar:
         Categories: /categories
         Tags: /tags
         About: /about
+
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:
@@ -128,6 +129,9 @@ footer:
         Download on GitHub:
             icon: fab fa-github
             url: 'https://github.com/ppoffice/hexo-theme-icarus'
+        Privacy: /privacy
+        Imprint: /imprint
+
 # Article related configurations
 article:
     # Code highlight settings
@@ -295,13 +299,13 @@ plugins:
     # https://www.osano.com/cookieconsent/
     cookie_consent:
         # The compliance type. Can be "info", "opt-in", or "opt-out"
-        type: info
+        type: opt-in
         # Theme of the popup. Can be "block", "edgeless", or "classic"
-        theme: edgeless
+        theme: block
         # Whether the popup should stay static regardless of the page scrolls
         static: false
         # Where on the screen the consent popup should display
-        position: bottom-left
+        position: center
         # URL to your site's cookie policy
         policyLink: 'https://www.cookiesandyou.com/'
     # Enable the lightGallery and Justified Gallery plugins

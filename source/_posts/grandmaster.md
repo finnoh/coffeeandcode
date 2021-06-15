@@ -11,18 +11,16 @@ tags:
   - advanced
   - seaborn
   - networkx
-image: images/diff_nat.jpg
-image_credit: "Databuff, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons"
 code_lang: "Python"
 description: "The top of kaggle is crowded, and interconnected."
 weight: 100
 featured: yes
 
 ---
-# What is Kaggle?
-One of the top communities for data science is the online-community of [kaggle.com](https://www.kaggle.com/). There are tutorials, discussions, datasets and online competitions on this website. Beyond that, kaggle is one of the most important tools of the open source data science community. Not only through the sharing of code and datasets, but mostly by crowdsourcing data science projects through competitions. Even top notch tech companies have leveraged the power of these competitions and reward participants with high prizes (at the time of writing, the highest being $100,000 offered by [Jane Street Group](https://www.kaggle.com/c/jane-street-market-prediction)). 
+## What is Kaggle?
+One of the top communities for data science is the online-community of [kaggle.com](https://www.kaggle.com/). There are tutorials, discussions, datasets and online competitions on this website. Beyond that, kaggle is one of the most important tools of the open source data science community. Not only through the sharing of code and datasets, but mostly by crowd sourcing data science projects through competitions. Even top notch tech companies have leveraged the power of these competitions and reward participants with high prizes (at the time of writing, the highest being $100,000 offered by [Jane Street Group](https://www.kaggle.com/c/jane-street-market-prediction)).
 
-## How successful is a user?
+### How successful is a user?
 To further motivate the participation in the publishing of code, creation of datasets and competitions, kaggle has established a ranking system for its community. The users can climb different ranks, by completing different requirements that get increasingly harder. At the moment, there are 5 different ranks - in increasing order:
 
 1. Novice
@@ -33,9 +31,10 @@ To further motivate the participation in the publishing of code, creation of dat
 
 For more information on these ranks, visit kaggle's [help-page](https://www.kaggle.com/progression)
 
-# Exploring the Kaggle Community
+## Exploring the Kaggle Community
 In an effort, to get a better idea of the data science community we use data published by kaggle itself about things going on in its user body. The data can be found here: [Meta-Kaggle](https://www.kaggle.com/kaggle/meta-kaggle?select=Users.csv)
-## Number of Followers
+
+### Number of Followers
 Beyond its service to the data science community, kaggle also provided meta-data about what is going on its website. Hence, everybody can access and explore what is going on!
 
 
@@ -64,7 +63,7 @@ This API makes it possible, to directly download datasets from within your scrip
 #!kaggle datasets download kaggle/meta-kaggle
 ```
 
-Next we load in the data about kaggle's users and their followers and wrangle with it. The goal is to get a nice dataframe of followers and users. We won't discuss the datastructure here, so feel free to check out the data yourself (see link above).
+Next we load in the data about kaggle's users and their followers and wrangle with it. The goal is to get a nice data frame of followers and users. We won't discuss the data structure here, so feel free to check out the data yourself (see link above).
 
 
 ```python
@@ -76,7 +75,7 @@ df_users = pd.read_csv('./meta-kaggle/Users.csv')
 
 ```python
 # merge the user information to the user followings dataset
-col_select = ['Id','DisplayName','RegisterDate', 'PerformanceTier'] 
+col_select = ['Id','DisplayName','RegisterDate', 'PerformanceTier']
 
 tmp = df_followers.merge(df_users[col_select], left_on='UserId', right_on='Id')
 df = tmp.merge(df_users[col_select], left_on='FollowingUserId', right_on='Id', suffixes=('_user', '_follower'))
@@ -264,8 +263,8 @@ df_agg.shape # the 5 most followed kaggle users are contained in here
 
 
 
-Interestingly, we see that the 5 most followed kaggle users account for nearly 90,000 out of 550,000 links between users (connections), which is around every sixth connection! 
-This leads us to further explore the number of followers each user has. For that purpose we created a density plot below. 
+Interestingly, we see that the 5 most followed kaggle users account for nearly 90,000 out of 550,000 links between users (connections), which is around every sixth connection!
+This leads us to further explore the number of followers each user has. For that purpose we created a density plot below.
 
 
 ```python
@@ -290,9 +289,9 @@ g.set(xlabel='Number of Followers', ylabel='Density', title='Distribution of Num
 
 As expected, the distribution is skewed to the right - there are many users with only a few users, but only a few users with many followers. It gets harder to "get to the top", there are fewer people there!
 
-## Kaggle Ranks of Users
+### Kaggle Ranks of Users
 
-Besides the number of followers, we are also interested in the different kaggle ranks. How many novice users are there? And how rare is it to be a grandmaster? To get an idea, we plotted the number of users for each tier below in a barplot. As expected, we again see a funnel towards the more exclusive tiers. This makes sense, it is very difficult to reach the grandmaster level and only a few people have the ability and motivation to do so.
+Besides the number of followers, we are also interested in the different kaggle ranks. How many novice users are there? And how rare is it to be a grandmaster? To get an idea, we plotted the number of users for each tier below in a bar plot. As expected, we again see a funnel towards the more exclusive tiers. This makes sense, it is very difficult to reach the grandmaster level and only a few people have the ability and motivation to do so.
 
 
 ```python
@@ -331,7 +330,7 @@ g.set(xlabel='Kaggle Tier', ylabel='Number of Users', title='Users per Kaggle Ti
 ![png](/images/grandmaster_24_1.png)
 
 
-## Social Network at the Top
+### Social Network at the Top
 Now that we have looked at the quantities of followers and the number of users in the different tiers, we can go a step further and think about the connections between these users. Who is following grandmasters? Are they following each other, like an exclusive circle? First we will need to prepare the data a bit, but later on we create a graph showing a fraction of the network of the 100 most followed kaggle grandmasters.
 
 
@@ -339,7 +338,7 @@ Now that we have looked at the quantities of followers and the number of users i
 # create an attribute dataframe
 def create_attr_df(df):
   """
-  This function creates the attribute dataframe, that is used to color the nodes later on. 
+  This function creates the attribute dataframe, that is used to color the nodes later on.
   :param df: The dataframe from kaggle
   :return: Returns the attribute dataframe
   """
@@ -393,7 +392,7 @@ boundaries = [0, 1, 2, 3, 4]
 norm = mpl.colors.BoundaryNorm(boundaries, cmap.N, clip=True)
 ```
 
-Finally, we can plot the graph in the appropriate colors. Note that the graph shows 100 grandmasters and a sample of their followers. Interestingly, there seem to be some grandmasters that follow a non or a few other grandmasters (outer part of the graph), while some of these users seem fairly interconnected with different other accounts (center of the graph). Also, it is apparent that most of the followers seem to be novices and contributors (blue and green colors in the clusters). 
+Finally, we can plot the graph in the appropriate colors. Note that the graph shows 100 grandmasters and a sample of their followers. Interestingly, there seem to be some grandmasters that follow a non or a few other grandmasters (outer part of the graph), while some of these users seem fairly interconnected with different other accounts (center of the graph). Also, it is apparent that most of the followers seem to be novices and contributors (blue and green colors in the clusters).
 
 Furthermore, in between the different clusters at the center of the graph, it looks like a good share of the points connecting multiple clusters are more on the purple and red side. This could hint at expert and master users following multiple of the most popular grandmasters, hence establishing edges between them. In fact, this would make sense as these users are probably more involved in the community and might have established "real connections" to some of the high profile users, while lower tier users might just be "followers" of these grandmaster accounts.
 
@@ -432,4 +431,3 @@ plt.show()
 
 
 ![png](/images/grandmaster_33_0.png)
-
