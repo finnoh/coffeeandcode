@@ -15,6 +15,20 @@ code_lang: "Python"
 description: "The top of kaggle is crowded, and interconnected."
 weight: 100
 featured: yes
+toc: true
+widgets:
+  - type: toc
+    position: left
+    # Whether to show the index of each heading
+    index: true
+    # Whether to collapse sub-headings when they are out-of-view
+    collapsed: true
+    # Maximum level of headings to show (1-6)
+    depth: 4
+
+  - type: recent_posts
+    position: left
+
 
 ---
 ## What is Kaggle?
@@ -284,7 +298,7 @@ g.set(xlabel='Number of Followers', ylabel='Density', title='Distribution of Num
 
 
 
-![png](/images/grandmaster_17_1.png)
+![Distribution of the number of followers](/images/grandmaster_17_1.png)
 
 
 As expected, the distribution is skewed to the right - there are many users with only a few users, but only a few users with many followers. It gets harder to "get to the top", there are fewer people there!
@@ -327,7 +341,7 @@ g.set(xlabel='Kaggle Tier', ylabel='Number of Users', title='Users per Kaggle Ti
 
 
 
-![png](/images/grandmaster_24_1.png)
+![Users per Kaggle tier](/images/grandmaster_24_1.png)
 
 
 ### Social Network at the Top
@@ -430,4 +444,4 @@ plt.show()
 ```
 
 
-![png](/images/grandmaster_33_0.png)
+![Network graph of Kaggle grandmasters](/images/grandmaster_33_0.png)
