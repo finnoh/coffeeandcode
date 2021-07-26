@@ -1,7 +1,7 @@
 ---
 author: Finn Höner
 date: 22/06/2021
-title: 'Of Gangs, Pirates and Sumo Wrestling: Three Thrilling Economics Papers'
+title: 'Of Gangs, Pirates and Sumo Wrestling: 3 Thrilling Economics Papers'
 
 ---
 
@@ -10,7 +10,7 @@ The field of economics consists of many fascinating subfields. From "classic" ar
 In this post, we search for a couple of articles whose research problems stick out even in this wide field of interests, while still being published in renowned journals. For reference we used the [Scimago Journal Ranking](https://www.scimagojr.com/journalrank.php?category=2002).
 
 ## An economic analysis of a drug-selling gang's finances
-*by Levitt and Venkatesh* [see paper](https://academic.oup.com/qje/article-abstract/115/3/755/1828153)
+*by Levitt and Venkatesh* [*see paper*](https://academic.oup.com/qje/article-abstract/115/3/755/1828153)
 
 ![](/images/levitt.jpg)
 [Steve Levitt (2012) - source](https://www.flickr.com/photos/sfoskett/8271116070/)
@@ -22,7 +22,7 @@ In Levitt & Venkatesh (2000)[^1], the authors look at the finances of drug-selli
 It is also worth to note the book Venkatesh (2009)[^2], "Gang Leader for a Day", that goes in deeper on the topic and further illustrates the work of the social scientist.
 
 ## An-arrgh-chy: The law and economics of pirate organization
-*by* *Peter Leeson* [see paper](https://www.journals.uchicago.edu/doi/full/10.1086/526403?casa_token=HqrCSim0FaAAAAAA%3ANaua_e6adheIm1AcMxupnfjE2rC-pQoCWzFFBfk0BBEqWB0xFkow_FYzrUeJPj6aB6o2MnT3A7ZM#_i10)
+*by* *Peter Leeson* [*see paper*](https://www.journals.uchicago.edu/doi/full/10.1086/526403?casa_token=HqrCSim0FaAAAAAA%3ANaua_e6adheIm1AcMxupnfjE2rC-pQoCWzFFBfk0BBEqWB0xFkow_FYzrUeJPj6aB6o2MnT3A7ZM#_i10)
 
 ![](/images/leeson.jpg)
 [Peter Leeson (2006) - source](https://upload.wikimedia.org/wikipedia/commons/3/3d/Peter_T._Leeson.jpg)
@@ -34,7 +34,7 @@ For a great overview on this and other papers by Peter Leeson, visit Steven Levi
 [PIMA: Ep. 31](https://freakonomics.com/podcast/pima-pete-leeson/)
 
 ## Winning Isn’t Everything: Corruption in Sumo Wrestling
-*by Duggan and Levitt* [see paper](https://www.aeaweb.org/articles?id=10.1257/000282802762024665)
+*by Duggan and Levitt* [*see paper*](https://www.aeaweb.org/articles?id=10.1257/000282802762024665)
 
 Duggan & Levitt (2002)[^4] takes a look at corruption. However, maybe not in a scenario that you'd expect at first: Mark Duggan and Steven Levitt investigate, whether there is evidence for corruption in sumo wrestling.
 

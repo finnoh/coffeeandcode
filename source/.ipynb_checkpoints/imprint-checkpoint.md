@@ -1,6 +1,7 @@
 ---
 title: "Imprint"
 summary: "The legal notice regarding this blog."
+
 ---
 
 ## Contact

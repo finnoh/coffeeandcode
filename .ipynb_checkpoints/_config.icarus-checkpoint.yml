@@ -215,7 +215,7 @@ widgets:
         # Email address for the Gravatar
         gravatar:
         # URL or path for the follow button
-        follow_link: 'https://github.com/finnoh'
+        follow_link: 'https://www.linkedin.com/in/finn-hoener/'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
