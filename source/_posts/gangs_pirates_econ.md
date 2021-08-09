@@ -1,6 +1,6 @@
 ---
 author: Finn Höner
-date: 22/06/2021
+date: '2021-06-22'
 title: 'Of Gangs, Pirates and Sumo Wrestling: 3 Thrilling Economics Papers'
 
 ---
