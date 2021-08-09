@@ -1,0 +1,32 @@
+axes.titlesize : 24
+axes.labelsize : 20
+axes.grid: True
+axes.spines.right : False
+axes.spines.top : False
+axes.labelcolor : (0.1,0.1,0.1)
+
+axes.prop_cycle: cycler('color', ['AAF87E', 'F8DE7E', '7EF8BB', '7ECDF8', '987EF8', 'F87EF0', 'F87E87', '7E87F8', 'F8B27E', 'F8EF7E'])
+
+lines.linewidth : 3
+lines.markersize : 12
+lines.markeredgewidth : 0
+
+xtick.labelsize : 16
+ytick.labelsize : 16
+
+figure.figsize: 10, 7.5
+figure.dpi : 200
+figure.autolayout: True
+
+font.family         : sans-serif
+font.sans-serif     : Arial
+font.weight : bold
+
+grid.linestyle: 5,9
+grid.alpha : 0.4
+grid.linewidth : 0.6
+
+scatter.marker : .
+
+xtick.direction:     inout
+ytick.direction:     inout
