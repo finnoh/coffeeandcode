@@ -119,7 +119,7 @@ navbar:
         Send Mail:
             icon: fas fa-envelope
             url: 'mailt: finn@ds-econ.com'
-            
+
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
@@ -321,7 +321,7 @@ plugins:
     # https://analytics.google.com
     google_analytics:
         # Google Analytics tracking ID G-FEHK40T3GG
-        tracking_id:
+        tracking_id: G-FEHK40T3GG
     # Hotjar user feedback plugin
     # https://www.hotjar.com/
     hotjar:

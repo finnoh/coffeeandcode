@@ -4,6 +4,10 @@ summary: "Information regarding the privacy policy."
 
 ---
 
+<body>
+<a href="https://www.iubenda.com/privacy-policy/52077954" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+</body>
+
 This Privacy Policy applies to https://ds-econ.com (in the following: “us”, “we”, "DS-Econ"). We will respect your privacy regarding any information we may collect while operating our website and are dedicated to the protection of information you may provide us through the use of the website. This policy only applies to information collected through this web page. You may be required to agree to additional terms and conditions, when using this website.
 
 ## Information of Website Visitors
