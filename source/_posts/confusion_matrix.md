@@ -33,6 +33,8 @@ widgets:
 
 In classification problems, we often want to assess the quality of our model beyond a simple metric like the models accuracy, especially if we have many different classes or they are of different importance to us. In this short article, I show you a more intuitive way to present the quality of your classification model - a color coded Confusion Matrix.
 
+<!-- more -->
+
 A classic tool, to evaluate our model in more detail is the confusion matrix. While it definitely is a means to look at the quality of our model, it might be not intuitive when showing it in a presentation or towards "non data science" peers. When we are in a situation where we have to communicate our results in a more simple way, we can make use of data visualization: This is also a concept we can apply here!
 
 

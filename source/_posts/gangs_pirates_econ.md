@@ -9,6 +9,8 @@ The field of economics consists of many fascinating subfields. From "classic" ar
 
 In this post, we search for a couple of articles whose research problems stick out even in this wide field of interests, while still being published in renowned journals. For reference we used the [Scimago Journal Ranking](https://www.scimagojr.com/journalrank.php?category=2002).
 
+<!-- more -->
+
 ## An economic analysis of a drug-selling gang's finances
 *by Levitt and Venkatesh* [*see paper*](https://academic.oup.com/qje/article-abstract/115/3/755/1828153)
 

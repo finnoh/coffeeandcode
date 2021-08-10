@@ -148,7 +148,7 @@ article:
         # Default folding status of the code blocks. Can be "", "folded", "unfolded"
         fold: unfolded
     # Whether to show estimated article reading time
-    readtime: true
+    readtime: false
     # Article licensing block
     licenses:
         Creative Commons:
@@ -203,7 +203,7 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Finn Hoener
+        author: Finn Höner
         # Author title
         author_title: Data Science Student
         # Author's current location
@@ -233,9 +233,10 @@ widgets:
         # Whether to show the index of each heading
         index: true
         # Whether to collapse sub-headings when they are out-of-view
-        collapsed: true
+        collapsed: false
         # Maximum level of headings to show (1-6)
         depth: 3
+
     # Recommendation links widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -270,7 +271,7 @@ widgets:
         position: left
         type: subscribe_email
         # Hint text under the email input
-        description:
+        description: "Write me an email!"
         # Feedburner ID
         feedburner_id: ''
     # Google AdSense unit configurations

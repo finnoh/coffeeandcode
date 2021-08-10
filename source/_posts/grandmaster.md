@@ -31,8 +31,11 @@ widgets:
 
 
 ---
+
 ## What is Kaggle?
 One of the top communities for data science is the online-community of [kaggle.com](https://www.kaggle.com/). There are tutorials, discussions, datasets and online competitions on this website. Beyond that, kaggle is one of the most important tools of the open source data science community. Not only through the sharing of code and datasets, but mostly by crowd sourcing data science projects through competitions. Even top notch tech companies have leveraged the power of these competitions and reward participants with high prizes (at the time of writing, the highest being $100,000 offered by [Jane Street Group](https://www.kaggle.com/c/jane-street-market-prediction)).
+
+<!-- more -->
 
 ### How successful is a user?
 To further motivate the participation in the publishing of code, creation of datasets and competitions, kaggle has established a ranking system for its community. The users can climb different ranks, by completing different requirements that get increasingly harder. At the moment, there are 5 different ranks - in increasing order:
